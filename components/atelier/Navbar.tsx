@@ -45,7 +45,7 @@ export function Navbar() {
       >
         <a
           href="#top"
-          className="display text-[1.6rem] shrink-0 text-espresso transition-opacity hover:opacity-60"
+          className="display text-[1.8rem] shrink-0 text-espresso transition-opacity hover:opacity-60"
         >
           <span className="hidden sm:inline">Atelier Douglas</span>
           <span className="sm:hidden">A. Douglas</span>

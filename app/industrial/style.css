@@ -1,0 +1,290 @@
+.bg-background {
+  background-color: lab(92.47% 0.14 3.86) !important;
+}
+
+.label-tech {
+  font-family: var(--font-mono) !important;
+  font-size: 0.6875rem !important;
+  line-height: 1 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+}
+
+.display-tight {
+  font-weight: 600 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 0.94 !important;
+  text-transform: uppercase !important;
+  font-family: var(--font-sans) !important;
+}
+
+.bg-signal {
+  background-color: var(--signal) !important;
+}
+
+.bg-graphite ‘ {
+  background-color: var(--graphite) !important;
+}
+
+.rule-top {
+  border-top: 1px solid var(--line) !important;
+}
+
+.grain {
+  position: relative !important;
+  &::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    opacity: 0.32 !important;
+    mix-blend-mode: multiply !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E") !important;
+  }
+}
+
+.grain-dark {
+  background-color: var(--graphite) !important;
+
+  position: relative !important;
+  &::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    opacity: 0.14 !important;
+    mix-blend-mode: overlay !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E") !important;
+  }
+}
+
+.grid-lines {
+  background-image: linear-gradient(
+    to right,
+    var(--line) 1px,
+    transparent 1px
+  ) !important;
+  background-size: 8.3333% 100% !important;
+}
+
+.link-underline {
+  position: relative !important;
+  &::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    bottom: -3px !important;
+    height: 1px !important;
+    width: 100% !important;
+    background: currentColor !important;
+    transform: scaleX(0) !important;
+    transform-origin: left !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  &:hover::after {
+    transform: scaleX(1) !important;
+  }
+}
+
+.reveal {
+  opacity: 0 !important;
+  transform: translateY(18px) !important;
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  &[data-visible="true"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * NORDAL — industrial editorial design system.
+ * Palette: warm off-white #F1F0EC, graphite #17191A / #3F4445,
+ * signal orange #D65A32, light grey #D8D8D3.
+ */
+
+@theme inline {
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 2px;
+  --radius-2xl: 2px;
+  --radius-3xl: 2px;
+  --radius-4xl: 2px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-graphite: var(--graphite);
+  --color-graphite-soft: var(--graphite-soft);
+  --color-signal: var(--signal);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --font-sans:
+    "Geist", "Inter", ui-sans-serif, system-ui, sans-serif !important;
+  --font-mono:
+    "Geist Mono", "IBM Plex Mono", ui-monospace, monospace !important;
+}
+
+:root {
+  --radius: 0px !important;
+  --background: oklch(0.955 0.006 85) !important;
+  --foreground: oklch(0.185 0.004 250) !important;
+  --card: oklch(0.972 0.005 85) !important;
+  --card-foreground: oklch(0.185 0.004 250) !important;
+  --popover: oklch(0.972 0.005 85) !important;
+  --popover-foreground: oklch(0.185 0.004 250) !important;
+  --primary: oklch(0.185 0.004 250) !important;
+  --primary-foreground: oklch(0.955 0.006 85) !important;
+  --secondary: oklch(0.885 0.005 90) !important;
+  --secondary-foreground: oklch(0.185 0.004 250) !important;
+  --muted: oklch(0.9 0.005 90) !important;
+  --muted-foreground: oklch(0.47 0.006 240) !important;
+  --accent: oklch(0.605 0.152 40) !important;
+  --accent-foreground: oklch(0.978 0.005 85) !important;
+  --destructive: oklch(0.55 0.2 27) !important;
+  --destructive-foreground: oklch(0.978 0.005 85) !important;
+  --border: oklch(0.855 0.005 90) !important;
+  --input: oklch(0.855 0.005 90) !important;
+  --ring: oklch(0.605 0.152 40) !important;
+  --graphite: oklch(0.185 0.004 250) !important;
+  --graphite-soft: oklch(0.365 0.005 220) !important;
+  --signal: oklch(0.605 0.152 40) !important;
+  --line: oklch(0.855 0.005 90) !important;
+  --line-strong: oklch(0.72 0.005 90) !important;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border) !important;
+  }
+
+  html {
+    scroll-behavior: smooth !important;
+  }
+
+  body {
+    background-color: var(--color-background) !important;
+    color: var(--color-foreground) !important;
+    font-family: var(--font-sans) !important;
+    -webkit-font-smoothing: antialiased !important;
+    font-feature-settings: "ss01", "cv01" !important;
+  }
+
+  ::selection {
+    background: var(--signal) !important;
+    color: var(--primary-foreground) !important;
+  }
+}
+
+/* ---------- Utilities ---------- */
+
+@utility label-tech {
+  font-family: var(--font-mono) !important;
+  font-size: 0.6875rem !important;
+  line-height: 1 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+}
+
+@utility display-tight {
+  font-weight: 600 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 0.94 !important;
+  text-transform: uppercase !important;
+}
+
+@utility rule-top {
+  border-top: 1px solid var(--line) !important;
+}
+
+@utility grain {
+  position: relative !important;
+  &::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    opacity: 0.32 !important;
+    mix-blend-mode: multiply !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E") !important;
+  }
+}
+
+@utility grain-dark {
+  position: relative !important;
+  &::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    opacity: 0.14 !important;
+    mix-blend-mode: overlay !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E") !important;
+  }
+}
+
+@utility grid-lines {
+  background-image: linear-gradient(
+    to right,
+    var(--line) 1px,
+    transparent 1px
+  ) !important;
+  background-size: 8.3333% 100% !important;
+}
+
+@utility link-underline {
+  position: relative !important;
+  &::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    bottom: -3px !important;
+    height: 1px !important;
+    width: 100% !important;
+    background: currentColor !important;
+    transform: scaleX(0) !important;
+    transform-origin: left !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  &:hover::after {
+    transform: scaleX(1) !important;
+  }
+}
+
+@utility reveal {
+  opacity: 0 !important;
+  transform: translateY(18px) !important;
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  &[data-visible="true"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

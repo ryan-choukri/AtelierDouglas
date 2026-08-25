@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import maisonArdoise from "@/assets/work-maison-ardoise.jpg";
+import nordalIndustrie from "@/assets/work-nordal-industrie.png";
+import barberProject from "@/assets/work-barber-project.png";
 import atelier19 from "@/assets/work-atelier19.jpg";
 import nordPierre from "@/assets/work-nord-pierre.jpg";
 
@@ -83,18 +84,20 @@ export function Services() {
 
 const projects = [
   {
-    name: "Maison Ardoise",
-    category: "Architecture / intérieur",
-    text: "Un site-portfolio silencieux, construit autour de la photographie et d'une grille très stricte.",
-    img: maisonArdoise,
+    name: "NORDAL",
+    category: "Industrie Lourd / Usinage",
+    text: "Un site-portfolio, technique et morderne, pour une entreprise d'usinage de précision.",
+    img: nordalIndustrie,
     year: "2026",
+    url: "/industrial",
   },
   {
-    name: "Atelier 19",
-    category: "Mode & lifestyle indépendant",
-    text: "Direction artistique typographique affirmée, boutique légère et rapide.",
-    img: atelier19,
-    year: "2025",
+    name: "Barber Project",
+    category: "Site vitrine pour les Barbershops",
+    text: "Un site vitrine moderne et élégant pour les salons de coiffure et barbershops, avec réservation en ligne.",
+    img: barberProject,
+    year: "2026",
+    url: "https://thefrenchebarber.netlify.app/barber-240",
   },
   {
     name: "Nord & Pierre",
@@ -102,6 +105,7 @@ const projects = [
     text: "Refonte complète : documentation technique claire, demandes de devis structurées.",
     img: nordPierre,
     year: "2025",
+    url: "#contact",
   },
 ];
 
@@ -129,7 +133,11 @@ export function Work() {
                 i % 2 === 1 ? "md:[&>figure]:order-2" : ""
               }`}
             >
-              <figure
+              <a
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Voir le projet ${p.name}`}
                 className={`cursor-pointer group relative overflow-hidden border border-hairline bg-paper md:col-span-8 ${
                   i % 2 === 1 ? "md:col-start-5" : ""
                 }`}
@@ -142,7 +150,7 @@ export function Work() {
                   height={960}
                   className="w-full transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
                 />
-              </figure>
+              </a>
               <div
                 className={`md:col-span-4 ${i % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""}`}
               >
@@ -158,7 +166,9 @@ export function Work() {
                   {p.text}
                 </p>
                 <a
-                  href="#contact"
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group mt-7 inline-flex items-center gap-2 border-b border-espresso/30 pb-1 text-sm font-medium text-espresso transition-colors hover:border-terracotta hover:text-terracotta"
                 >
                   Voir le projet
