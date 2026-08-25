@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-
+import Image from "next/image";
+import stonkImg from "@/public/stonk2.png";
+import captationseoImg from "@/public/captationseo.png";
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
@@ -86,6 +88,29 @@ export function Hero() {
             className="rise m-4 pt-10 mt-0 relative max-w-md lg:max-w-none"
             style={{ animationDelay: "540ms" }}
           >
+            <Image
+              style={{
+                transform: `translate3d(${tilt.x * 43}px, ${tilt.y * 23}px, 0)`,
+                transition: "transform 700ms cubic-bezier(.2,.7,.2,1)",
+              }}
+              src={stonkImg}
+              alt="flèche montante"
+              width={800}
+              height={600}
+              className="z-20 -rotate-10 absolute scale-75 top-45 left-0 w-[calc(100%+2.5rem)] max-w-none"
+            />
+            <Image
+              style={{
+                transform: `translate3d(${tilt.x * 43}px, ${tilt.y * 23}px, 0)`,
+                transition: "transform 700ms cubic-bezier(.2,.7,.2,1)",
+              }}
+              src={captationseoImg}
+              alt="captation SEO"
+              width={800}
+              height={600}
+              className="z-20 absolute scale-40 top-3 left-10 w-[calc(100%+2.5rem)] max-w-none"
+            />
+
             {/* paper sheet behind */}
             <div
               className="absolute -left-6 top-10 h-[78%] w-[86%] rotate-[-4deg] border border-hairline bg-paper"
@@ -104,7 +129,6 @@ export function Hero() {
               className="drift-slow absolute -bottom-6 left-2 h-16 w-16 border border-terracotta"
               aria-hidden
             />
-
             {/* browser window */}
             <div
               className="relative overflow-hidden rounded-lg border border-espresso/15 bg-paper shadow-[0_40px_80px_-40px_oklch(0.06_0.01_45/0.85)]"
@@ -157,7 +181,6 @@ export function Hero() {
                 </span>
               </div>
             </div>
-
             {/* annotations */}
           </div>
           <p className="label mt-6 text-right text-[0.5625rem] text-walnut/70">

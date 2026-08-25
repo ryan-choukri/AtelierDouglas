@@ -2,26 +2,11 @@
 import Image from "next/image";
 import nordalIndustrie from "@/assets/work-nordal-industrie.png";
 import barberProject from "@/assets/work-barber-project.png";
-import atelier19 from "@/assets/work-atelier19.jpg";
 import nordPierre from "@/assets/work-nord-pierre.jpg";
+import { VisibilityConversion } from "@/components/atelier/VisibilityConversion";
 
 export function Statement() {
-  return (
-    <section className="darker-part grain border-b border-hairline">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-5 py-28 sm:px-6 md:grid-cols-12 md:py-40">
-        <h2 className="display col-span-full text-[clamp(2.6rem,7vw,6rem)] text-espresso md:col-span-7">
-          Un bon site,
-          <br />
-          ça se voit<span className="text-terracotta">.</span>
-        </h2>
-        <p className="col-span-full self-end text-[1.0625rem] leading-relaxed text-walnut md:col-span-4 md:col-start-9">
-          Nous concevons des sites qui donnent immédiatement une meilleure image
-          de votre entreprise — mais surtout qui rendent votre activité plus
-          claire, plus crédible et plus facile à choisir.
-        </p>
-      </div>
-    </section>
-  );
+  return <VisibilityConversion />;
 }
 
 const services = [
