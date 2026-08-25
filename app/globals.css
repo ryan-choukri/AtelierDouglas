@@ -26,7 +26,8 @@ body {
 }
 
 .darker-part {
-  background: rgb(33 20 14 / 82%);
+  /* background: rgb(33 20 14 / 82%); */
+  background: var(--paper);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
   backdrop-filter: blur(24px) saturate(160%);
 }

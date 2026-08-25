@@ -13,7 +13,7 @@ const SUGGESTIONS = [
 ];
 
 const GREETING =
-  "Bonjour 👋 Je suis Émile, l'assistant de La Maison du Web. Je peux vous renseigner sur nos offres, délais, tarifs. Une question ?";
+  "Bonjour 👋 Je suis Tomy, l'assistant de l'Atelier Douglas. Je peux vous renseigner sur nos offres, délais, tarifs. Une question ?";
 
 // Simple keyword-based responses — no real AI, just trigger words.
 const RULES: { keywords: string[]; answer: string }[] = [
@@ -30,7 +30,7 @@ const RULES: { keywords: string[]; answer: string }[] = [
   {
     keywords: ["délai", "delai", "livraison", "combien de temps"],
     answer:
-      "Comptez généralement entre 2 et 4 semaines selon la taille du site et les allers-retours de validation.",
+      "Comptez généralement entre 1 et 3 semaines selon la taille du site et les allers-retours de validation.",
   },
   {
     keywords: ["seo", "référencement", "referencement"],
@@ -53,7 +53,7 @@ const RULES: { keywords: string[]; answer: string }[] = [
 ];
 
 const FALLBACK =
-  "Je ne suis pas sûr de comprendre. Vous pouvez me demander nos tarifs, délais, le code promo ou le SEO !";
+  "Je ne suis pas sûr de comprendre. Vous pouvez me demander nos tarifs, délais ou le SEO !";
 
 const EMAIL_REGEX = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i;
 

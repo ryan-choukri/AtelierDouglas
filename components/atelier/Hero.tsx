@@ -26,7 +26,7 @@ export function Hero() {
       className="grain relative min-h-[96svh] overflow-hidden border-b border-hairline pt-28 sm:pt-32"
     >
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-14 px-5 pb-20 sm:px-6 lg:grid-cols-12 lg:gap-8">
-        <div className="lg:col-span-8 lg:pt-10">
+        <div className="lg:col-span-6 lg:pt-10">
           <p
             className="label rise text-walnut"
             style={{ animationDelay: "60ms" }}
@@ -36,13 +36,13 @@ export function Hero() {
 
           <h1 className="mt-7 text-espresso">
             <span
-              className="display rise block text-[clamp(4.9rem,18.6vw,9.9rem)]"
+              className="display rise inline-block lg:block whitespace-nowrap lg:whitespace-normal mr-3 lg:mr-0 text-[clamp(4.9rem,18.6vw,9.9rem)]"
               style={{ animationDelay: "140ms" }}
             >
               Votre site
             </span>
             <span
-              className="display rise block text-[clamp(4.9rem,18.6vw,9.9rem)]"
+              className="display rise inline-block lg:block whitespace-nowrap lg:whitespace-normal text-[clamp(4.9rem,18.6vw,9.9rem)]"
               style={{ animationDelay: "240ms" }}
             >
               compte<span className="text-terracotta">.</span>
@@ -50,10 +50,10 @@ export function Hero() {
           </h1>
 
           <p
-            className="rise mt-8 max-w-xl text-[1.0625rem] leading-relaxed text-walnut"
+            className="rise  mt-8 max-w-xl text-[1.0625rem] leading-relaxed text-walnut"
             style={{ animationDelay: "360ms" }}
           >
-            Design, développement &amp; refonte de sites web pour les
+            Création de site web &amp; design, refonte de sites web pour les
             entreprises qui veulent une présence en ligne à la hauteur de leur
             activité.
           </p>
@@ -81,9 +81,9 @@ export function Hero() {
         </div>
 
         {/* Art-directed composition: a digital object on a designer's table */}
-        <div className="relative lg:col-span-4">
+        <div className="relative lg:col-span-6">
           <div
-            className="rise relative mx-auto max-w-md lg:max-w-none"
+            className="rise m-4 pt-10 mt-0 relative max-w-md lg:max-w-none"
             style={{ animationDelay: "540ms" }}
           >
             {/* paper sheet behind */}
@@ -97,7 +97,7 @@ export function Hero() {
             />
             {/* orange geometry */}
             <div
-              className="drift-slower absolute -right-2 -top-4 h-24 w-24 rounded-full bg-terracotta/85"
+              className="ml-3 mt-5 drift-slower absolute -right-5 -top-4 h-24 w-24 rounded-full bg-terracotta/85"
               aria-hidden
             />
             <div
@@ -111,6 +111,8 @@ export function Hero() {
               style={{
                 transform: `translate3d(${tilt.x * 14}px, ${tilt.y * 12}px, 0)`,
                 transition: "transform 700ms cubic-bezier(.2,.7,.2,1)",
+                background:
+                  "linear-gradient(149deg,rgba(37, 9, 9, 1) 11%, rgba(73, 16, 13, 1) 72%, rgba(44, 9, 7, 1) 100%)",
               }}
             >
               <div className="flex items-center gap-1.5 border-b border-hairline px-3 py-2.5">
@@ -123,9 +125,11 @@ export function Hero() {
               </div>
               <div className="space-y-4 p-5">
                 <div className="display text-[2.2rem] leading-[0.9] text-espresso">
-                  Bonne
+                  Une Bonne impression
                   <br />
-                  impression
+                  <span className="text-paper bg-terracotta">
+                    ça change tout&nbsp;
+                  </span>
                 </div>
                 <div className="space-y-1.5">
                   <div className="h-px w-full bg-hairline" />
@@ -133,9 +137,9 @@ export function Hero() {
                   <div className="h-px w-2/3 bg-hairline" />
                 </div>
                 <div className="grid grid-cols-3 gap-2 pt-1">
-                  <div className="aspect-[4/5] bg-terracotta/85" />
+                  <div className="aspect-[4/5] bg-terracotta" />
                   <div className="aspect-[4/5] border border-hairline" />
-                  <div className="aspect-[4/5] bg-walnut/15" />
+                  <div className="aspect-[4/5] bg-paper" />
                 </div>
                 <div className="flex items-center justify-between pt-1">
                   <span className="label text-[0.5rem] text-walnut/80">
@@ -145,16 +149,16 @@ export function Hero() {
                     Development
                   </span>
                 </div>
+                <span
+                  className="label absolute -left-7 bottom-24 hidden rotate-[-90deg] text-[0.5625rem] text-walnut/70 lg:block"
+                  aria-hidden
+                >
+                  Web — 2026
+                </span>
               </div>
             </div>
 
             {/* annotations */}
-            <span
-              className="label absolute -left-6 bottom-24 hidden rotate-[-90deg] text-[0.5625rem] text-walnut/70 lg:block"
-              aria-hidden
-            >
-              Web — 2026
-            </span>
           </div>
           <p className="label mt-6 text-right text-[0.5625rem] text-walnut/70">
             Made in France
