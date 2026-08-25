@@ -24,3 +24,322 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.darker-part {
+  background: rgb(33 20 14 / 82%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  backdrop-filter: blur(24px) saturate(160%);
+}
+.custom-bg-terracotta {
+  /* background: lab(57.7764% 39.2488 42.3989); */
+  background: rgb(255 105 45 / 49%);
+}
+/* COPY FROM LOVABLE */
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * ATELIER DOUGLAS — design system
+ * Warm ivory paper, espresso ink, burnt orange, walnut.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-display: "Geist", "Inter", system-ui, sans-serif;
+  --font-sans: "Geist", "Inter", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-ivory: var(--ivory);
+  --color-paper: var(--paper);
+  --color-espresso: var(--espresso);
+  --color-ink: var(--ink);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-deep: var(--terracotta-deep);
+  --color-walnut: var(--walnut);
+  --color-hairline: var(--hairline);
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Dark walnut atelier: deep brown surfaces, ivory ink */
+  /* --ivory: oklch(0.158 0.018 45); */
+  --ivory: lab(3 9.51 4.57);
+  --paper: lab(5.54% 14.67 6.93);
+
+  /* --paper: oklch(0.212 0.023 44); */
+  --espresso: oklch(0.945 0.016 84);
+  --ink: oklch(0.975 0.012 84);
+  --terracotta: oklch(0.645 0.142 42);
+  --terracotta-deep: oklch(0.555 0.128 40);
+  --walnut: oklch(0.735 0.038 62);
+  --hairline: oklch(0.945 0.016 84 / 0.13);
+
+  --background: var(--ivory);
+  /* --background: lab(4 7.37 5.97); */
+
+  --foreground: var(--espresso);
+  --card: var(--paper);
+  --card-foreground: var(--espresso);
+  --popover: var(--paper);
+  --popover-foreground: var(--espresso);
+  --primary: var(--terracotta);
+  --primary-foreground: oklch(0.165 0.02 45);
+  --secondary: var(--walnut);
+  --secondary-foreground: oklch(0.965 0.014 84);
+  --muted: oklch(0.242 0.024 44);
+  --muted-foreground: oklch(0.735 0.038 62);
+  --accent: var(--terracotta);
+  --accent-foreground: oklch(0.975 0.014 84);
+  --destructive: oklch(0.53 0.19 27);
+  --destructive-foreground: oklch(0.975 0.014 84);
+  --border: var(--hairline);
+  --input: var(--hairline);
+  --ring: var(--terracotta);
+
+  --glass-bg: oklch(0.235 0.024 44 / 0.55);
+  --glass-bg-scrolled: oklch(0.198 0.022 44 / 0.82);
+  --glass-border: oklch(0.945 0.016 84 / 0.12);
+  --shadow-float:
+    0 1px 2px oklch(0.08 0.01 45 / 0.5),
+    0 18px 40px -22px oklch(0.06 0.01 45 / 0.7);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-background);
+  }
+
+  body {
+    background-color: transparent;
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-synthesis-weight: none;
+  }
+
+  ::selection {
+    background: var(--terracotta);
+    color: var(--primary-foreground);
+  }
+}
+
+/* Extremely subtle printed-paper grain */
+@utility grain {
+  position: relative;
+  isolation: isolate;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.16;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@utility grain-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.22;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@utility label {
+  font-size: 0.6875rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-weight: 500;
+}
+
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+@utility glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-float);
+}
+
+@utility glass-scrolled {
+  background: var(--glass-bg-scrolled);
+  backdrop-filter: blur(24px) saturate(160%);
+}
+
+@utility rise {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: rise-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+@keyframes rise-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -12px, 0) rotate(1.2deg);
+  }
+}
+
+@utility drift-slow {
+  animation: drift 11s ease-in-out infinite;
+}
+
+@utility drift-slower {
+  animation: drift 16s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ---------- Fond texturé animé (nappes chaudes) ---------- */
+@utility aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  will-change: transform;
+}
+
+@utility aurora-a {
+  top: -18vh;
+  left: -10vw;
+  width: 70vw;
+  height: 70vh;
+  background: radial-gradient(
+    closest-side,
+    oklch(0.54 0.13 40 / 0.7),
+    transparent 70%
+  );
+  animation: aurora-drift-a 26s ease-in-out infinite;
+}
+
+@utility aurora-b {
+  top: 12vh;
+  right: -18vw;
+  width: 65vw;
+  height: 75vh;
+  background: radial-gradient(
+    closest-side,
+    oklch(0.46 0.085 45 / 0.75),
+    transparent 70%
+  );
+  animation: aurora-drift-b 34s ease-in-out infinite;
+}
+
+@utility aurora-c {
+  bottom: -22vh;
+  left: 8vw;
+  width: 80vw;
+  height: 70vh;
+  background: radial-gradient(
+    closest-side,
+    oklch(0.6 0.14 38 / 0.42),
+    transparent 72%
+  );
+  animation: aurora-drift-c 30s ease-in-out infinite;
+}
+
+@utility aurora-d {
+  top: 38vh;
+  left: 22vw;
+  width: 50vw;
+  height: 50vh;
+  background: radial-gradient(
+    closest-side,
+    oklch(0.37 0.06 55 / 0.8),
+    transparent 70%
+  );
+  animation: aurora-drift-a 22s ease-in-out infinite reverse;
+}
+
+@keyframes aurora-drift-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(6vw, 5vh, 0) scale(1.15);
+  }
+}
+
+@keyframes aurora-drift-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(-7vw, 7vh, 0) scale(0.9);
+  }
+}
+
+@keyframes aurora-drift-c {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(5vw, -6vh, 0) scale(1.2);
+  }
+}
