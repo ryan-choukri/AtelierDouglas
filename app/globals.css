@@ -34,6 +34,13 @@ body {
   /* background: lab(57.7764% 39.2488 42.3989); */
   background: rgb(255 105 45 / 49%);
 }
+
+.chatbot-button {
+  background: rgba(33, 20, 14, 0.453);
+  -webkit-backdrop-filter: blur(5px) saturate(160%);
+  backdrop-filter: blur(5px) saturate(160%);
+}
+
 /* COPY FROM LOVABLE */
 
 @custom-variant dark (&:is(.dark *));
@@ -52,7 +59,7 @@ body {
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  --font-display: "Geist", "Inter", system-ui, sans-serif;
+  --font-display: var(--font-aeternus), "Geist", "Inter", system-ui, sans-serif;
   --font-sans: "Geist", "Inter", system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
 
@@ -193,7 +200,7 @@ body {
 @utility display {
   font-family: var(--font-display);
   font-weight: 700;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
   line-height: 0.88;
   text-transform: uppercase;
 }
@@ -239,6 +246,26 @@ body {
 
 @utility drift-slower {
   animation: drift 16s ease-in-out infinite;
+}
+
+@keyframes blink-subtle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@utility blink-subtle {
+  animation: blink-subtle 2.6s ease-in-out infinite;
+}
+
+@utility chat-glow {
+  box-shadow:
+    0 0 32px 6px oklch(0.645 0.142 42 / 0.4),
+    0 40px 80px -40px oklch(0.06 0.01 45 / 0.85);
 }
 
 @media (prefers-reduced-motion: reduce) {

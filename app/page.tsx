@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Backdrop } from "@/components/atelier/Backdrop";
 import { Navbar } from "@/components/atelier/Navbar";
 import { Hero } from "@/components/atelier/Hero";
+import { Chatbot } from "@/components/atelier/Chatbot";
 import {
   Statement,
   Services,
@@ -49,6 +50,7 @@ export default function Index() {
         </main>
         <Footer />
       </div>
+      <Chatbot />
     </>
   );
 }

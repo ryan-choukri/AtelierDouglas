@@ -39,13 +39,13 @@ export function Navbar() {
 
       <nav
         aria-label="Navigation principale"
-        className={`mx-auto flex max-w-6xl items-center gap-4 rounded-full px-4 py-2.5 transition-all duration-500 sm:px-5 ${
+        className={` text-xl mx-auto flex max-w-6xl items-center gap-4 rounded-full px-4 py-2.5 transition-all duration-500 sm:px-5 ${
           scrolled ? "glass glass-scrolled" : "glass"
         }`}
       >
         <a
           href="#top"
-          className="label shrink-0 text-espresso transition-opacity hover:opacity-60"
+          className="display text-[1.6rem] shrink-0 text-espresso transition-opacity hover:opacity-60"
         >
           <span className="hidden sm:inline">Atelier Douglas</span>
           <span className="sm:hidden">A. Douglas</span>

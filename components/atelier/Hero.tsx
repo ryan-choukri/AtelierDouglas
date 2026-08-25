@@ -36,13 +36,13 @@ export function Hero() {
 
           <h1 className="mt-7 text-espresso">
             <span
-              className="display rise block text-[clamp(2.9rem,7.6vw,6.9rem)]"
+              className="display rise block text-[clamp(4.9rem,18.6vw,9.9rem)]"
               style={{ animationDelay: "140ms" }}
             >
               Votre site
             </span>
             <span
-              className="display rise block text-[clamp(2.9rem,7.6vw,6.9rem)]"
+              className="display rise block text-[clamp(4.9rem,18.6vw,9.9rem)]"
               style={{ animationDelay: "240ms" }}
             >
               compte<span className="text-terracotta">.</span>
