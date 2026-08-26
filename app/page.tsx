@@ -44,7 +44,7 @@ export default function Index() {
           <Services />
           <Work />
           <Philosophy />
-          <Atelier />
+          {/* <Atelier /> */}
           <Process />
           <FinalCta />
         </main>

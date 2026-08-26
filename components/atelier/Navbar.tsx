@@ -56,20 +56,16 @@ export function Navbar() {
             {/* Connected pill backgrounds — gooey filter merges them into one liquid shape */}
             <div
               className="absolute inset-0 flex items-center"
-              style={{ filter: "url(#nav-goo)" }}
               aria-hidden="true"
             >
               {links.map((l, i) => (
-                <div
-                  key={l.href}
-                  className="relative -mx-1 first:-ml-1 last:-mr-1"
-                >
+                <div key={l.href} className="relative ">
                   <span className="invisible block whitespace-nowrap px-5 py-2 text-[0.8125rem]">
                     {l.label}
                   </span>
                   <span
                     className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-                      hovered === i ? "bg-terracotta" : "bg-ivory/25"
+                      hovered === i ? "bg-terracotta" : ""
                     }`}
                   />
                 </div>
@@ -87,7 +83,7 @@ export function Navbar() {
                   onFocus={() => setHovered(i)}
                   onBlur={() => setHovered(null)}
                   className={`block whitespace-nowrap px-5 py-2 text-[0.8125rem] font-medium transition-colors duration-300 ${
-                    hovered === i ? "text-espresso" : "text-terracotta"
+                    hovered === i ? "text-espresso" : "text-walnut"
                   }`}
                 >
                   {l.label}

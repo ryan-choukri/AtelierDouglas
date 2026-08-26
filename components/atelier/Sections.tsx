@@ -2,7 +2,8 @@
 import Image from "next/image";
 import nordalIndustrie from "@/assets/work-nordal-industrie.png";
 import barberProject from "@/assets/work-barber-project.png";
-import nordPierre from "@/assets/work-nord-pierre.jpg";
+import metalforge from "@/assets/metalforge.png";
+
 import { VisibilityConversion } from "@/components/atelier/VisibilityConversion";
 
 export function Statement() {
@@ -69,12 +70,12 @@ export function Services() {
 
 const projects = [
   {
-    name: "NORDAL",
-    category: "Industrie Lourd / Usinage",
-    text: "Un site-portfolio, technique et morderne, pour une entreprise d'usinage de précision.",
-    img: nordalIndustrie,
+    name: "METALFORGE",
+    category: "Chaudronnerie et mécano-soudure",
+    text: "Refonte complète du site web d'une entreprise de chaudronnerie industrielle, avec un design moderne et une navigation optimisée.",
+    img: metalforge,
     year: "2026",
-    url: "/industrial",
+    url: "/chaudronerie",
   },
   {
     name: "Barber Project",
@@ -85,12 +86,12 @@ const projects = [
     url: "https://thefrenchebarber.netlify.app/barber-240",
   },
   {
-    name: "Nord & Pierre",
-    category: "Entreprise B2B spécialisée",
-    text: "Refonte complète : documentation technique claire, demandes de devis structurées.",
-    img: nordPierre,
-    year: "2025",
-    url: "#contact",
+    name: "NORDAL",
+    category: "Industrie Lourd / Usinage",
+    text: "Un site-portfolio, technique et morderne, pour une entreprise d'usinage de précision.",
+    img: nordalIndustrie,
+    year: "2026",
+    url: "/industrial",
   },
 ];
 

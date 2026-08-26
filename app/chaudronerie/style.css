@@ -1,0 +1,232 @@
+/*
+ * Design system — chaudronnerie industrielle
+ * Palette : bleu nuit, bleu industriel, blanc, gris clair, gris acier.
+ */
+
+:root {
+  --navy-deep: oklch(0.17 0.042 259);
+  --navy: oklch(0.235 0.055 258);
+  --navy-soft: oklch(0.33 0.055 258);
+  --blueprint: oklch(0.965 0.012 250);
+  --steel: oklch(0.55 0.018 252);
+  --steel-light: oklch(0.9 0.008 252);
+}
+
+.text-primary-foreground {
+  color: #ffffff !important;
+}
+.text-muted-foregroundalt {
+  color: oklch(52% 0.02 252) !important;
+}
+.label-tech {
+  font-family: var(--font-barlow), system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.font-display {
+  font-family:
+    var(--font-bebas-neue), "Barlow Condensed", system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-synthesis: weight;
+
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.bg-background {
+  background-color: lab(95.9296% -1.30308 -4.28033) !important;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Bebas Neue", "Barlow Condensed", system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+
+::selection {
+  background: oklch(0.52 0.125 252);
+  color: oklch(0.99 0.003 250);
+}
+
+/* ---------- Utilities ---------- */
+
+.label-tech {
+  font-family: "Barlow", system-ui, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.rule-accent {
+  position: relative;
+}
+
+.rule-accent::before {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  background: oklch(0.52 0.125 252);
+  margin-bottom: 1.25rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: reveal-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes reveal-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Surface textures & backgrounds ---------- */
+
+.surface-light {
+  position: relative;
+  isolation: isolate;
+  background-color: oklch(1 0 0);
+  background-image:
+    radial-gradient(
+      ellipse 70% 55% at 12% 0%,
+      color-mix(in oklab, oklch(0.52 0.125 252) 7%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 92% 12%,
+      color-mix(in oklab, oklch(0.235 0.055 258) 5%, transparent),
+      transparent 70%
+    ),
+    linear-gradient(
+      to right,
+      color-mix(in oklab, oklch(0.235 0.055 258) 9%, transparent) 1px,
+      transparent 2px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, oklch(0.235 0.055 258) 9%, transparent) 1px,
+      transparent 2px
+    );
+  background-size:
+    100% 100%,
+    100% 100%,
+    72px 72px,
+    72px 72px;
+}
+
+.surface-blueprint {
+  position: relative;
+  isolation: isolate;
+  background-color: oklch(0.965 0.012 250);
+  background-image:
+    radial-gradient(
+      ellipse 80% 60% at 50% -10%,
+      color-mix(in oklab, oklch(0.52 0.125 252) 10%, transparent),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 55% 45% at 100% 100%,
+      color-mix(in oklab, oklch(0.235 0.055 258) 7%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      circle,
+      color-mix(in oklab, oklch(0.235 0.055 258) 25%, transparent) 1px,
+      transparent 2.2px
+    );
+  background-size:
+    100% 100%,
+    100% 100%,
+    26px 26px;
+  overflow: hidden;
+}
+
+.surface-blueprint::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    color-mix(in oklab, oklch(0.52 0.125 252) 20%, transparent) 1px,
+    transparent 2.2px
+  );
+  background-size: 26px 26px;
+  opacity: 0.4;
+  pointer-events: none;
+  will-change: transform;
+
+  transform: translate(
+    calc(var(--parallax-x) / 4),
+    calc(var(--parallax-y) / 4)
+  );
+  transition: transform 0.15s linear;
+}
+
+.surface-navy {
+  position: relative;
+  isolation: isolate;
+  background-color: oklch(0.235 0.055 258);
+  background-image:
+    radial-gradient(
+      ellipse 75% 60% at 15% 0%,
+      color-mix(in oklab, oklch(0.52 0.125 252) 20%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 60% 55% at 95% 95%,
+      color-mix(in oklab, oklch(0.52 0.125 252) 16%, transparent),
+      transparent 72%
+    ),
+    repeating-linear-gradient(
+      135deg,
+      color-mix(in oklab, white 3%, transparent) 0 1px,
+      transparent 1px 9px
+    );
+  background-attachment: fixed;
+}
+
+.surface-navy-deep {
+  position: relative;
+  isolation: isolate;
+  background-color: oklch(0.17 0.042 259);
+  background-image:
+    radial-gradient(
+      ellipse 85% 70% at 50% 0%,
+      color-mix(in oklab, oklch(0.52 0.125 252) 24%, transparent),
+      transparent 72%
+    ),
+    repeating-linear-gradient(
+      135deg,
+      color-mix(in oklab, white 3%, transparent) 0 1px,
+      transparent 1px 9px
+    );
+  background-attachment: fixed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms;
+    transition-duration: 0.01ms;
+  }
+}

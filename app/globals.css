@@ -3,12 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --foregroundalt: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-foregroundalt: var(--foregroundalt);
   --font-sans: var(--font-geist-sans);
+  --font-bebas-neue: var(--font-bebas-neue);
+  --font-barlow: var(--font-barlow);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -16,6 +20,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --foregroundalt: #ffffff;
   }
 }
 
@@ -65,10 +70,16 @@ body {
   --font-display: var(--font-aeternus), "Geist", "Inter", system-ui, sans-serif;
   --font-sans: "Geist", "Inter", system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
+  --font-bebas-neue:
+    var(--font-bebas-neue), "Barlow Condensed", system-ui, sans-serif;
 
+  --font-barlow: var(--font-barlow), "Barlow", system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-foregroundalt: var(--foregroundalt);
   --color-card: var(--card);
+  --color-cardalt: var(--cardalt);
+
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
@@ -79,6 +90,7 @@ body {
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
+  --color-accent-chaud: var(--accent-chaud);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
@@ -94,6 +106,12 @@ body {
   --color-terracotta-deep: var(--terracotta-deep);
   --color-walnut: var(--walnut);
   --color-hairline: var(--hairline);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy: var(--navy);
+  --color-navy-soft: var(--navy-soft);
+  --color-blueprint: var(--blueprint);
+  --color-steel: var(--steel);
+  --color-steel-light: var(--steel-light);
 }
 
 :root {
@@ -112,11 +130,21 @@ body {
   --walnut: oklch(0.735 0.038 62);
   --hairline: oklch(0.945 0.016 84 / 0.13);
 
+  /* for chaudronerie  */
+  --navy-deep: oklch(0.17 0.042 259);
+  --navy: oklch(0.235 0.055 258);
+  --navy-soft: oklch(0.33 0.055 258);
+  --blueprint: oklch(0.965 0.012 250);
+  --steel: oklch(0.55 0.018 252);
+  --steel-light: oklch(0.9 0.008 252);
+
   --background: var(--ivory);
   /* --background: lab(4 7.37 5.97); */
 
   --foreground: var(--espresso);
+  --cardalt: #ffffff;
   --card: var(--paper);
+
   --card-foreground: var(--espresso);
   --popover: var(--paper);
   --popover-foreground: var(--espresso);
@@ -127,6 +155,7 @@ body {
   --muted: oklch(0.242 0.024 44);
   --muted-foreground: oklch(0.735 0.038 62);
   --accent: var(--terracotta);
+  --accent-chaud: oklch(0.52 0.125 252);
   --accent-foreground: oklch(0.975 0.014 84);
   --destructive: oklch(0.53 0.19 27);
   --destructive-foreground: oklch(0.975 0.014 84);
