@@ -20,6 +20,7 @@ import {
 import { Metadata } from "next";
 import Script from "next/script";
 import Image from "next/image";
+import stampUrl from "@/assets/stamp.png";
 
 import { Gallery, type GalleryPhoto } from "@/components/camping/Gallery";
 import { Navbar } from "@/components/camping/Navbar";
@@ -398,6 +399,16 @@ function Page() {
           id="le-camping"
           className="relative mx-auto max-w-7xl px-5 py-24 sm:px-8 sm:py-32"
         >
+          <div className="absolute -top-0 -right-50 rotate-[10deg] ">
+            <Image
+              src={stampUrl}
+              alt="stamp"
+              width={500}
+              height={500}
+              className="scale-75 object-cover"
+            />
+          </div>
+
           <NatureTexture variant={1} />
           <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-20">
             <Reveal>
@@ -542,7 +553,7 @@ function Page() {
                     className={`w-full object-cover ${item.ratio} transition-transform duration-[1100ms] ease-out group-hover:scale-[1.06]`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/85 via-forest-deep/25 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-7 text-primary-foreground sm:p-9">
+                  <div className="absolute bg-primary inset-x-0 bottom-0 p-7 text-primary-foreground sm:p-9">
                     <h3 className="font-display text-2xl sm:text-3xl">
                       {item.title}
                     </h3>

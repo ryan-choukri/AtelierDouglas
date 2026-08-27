@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image, { type StaticImageData } from "next/image";
 import heroComponent from "@/assets/tool-vis.png";
-import toolMultiple from "@/assets/tool-multiple.png";
 
 import {
   ArrowRight,
@@ -226,15 +225,7 @@ function Index() {
         {/* EXPERTISES */}
         <section id="expertises" className="surface-light py-24 lg:py-32">
           <div className="mx-auto max-w-[1320px] px-6">
-            <div className="absolute -top-20 right-30 ">
-              <Image
-                src={toolMultiple}
-                alt="Composant mécanique de précision usiné, détail macro"
-                // width={1280}
-                // height={1600}
-                className="scale-60 object-cover"
-              />
-            </div>
+            <div className="absolute -top-20 right-30 "></div>
             <div className="max-w-2xl rule-accent">
               <h2 className="font-display text-[clamp(1.9rem,3.6vw,2.9rem)] font-bold uppercase leading-tight text-navy">
                 Notre savoir-faire
