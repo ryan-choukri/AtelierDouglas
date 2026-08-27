@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Bebas_Neue, Barlow } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Bebas_Neue,
+  Barlow,
+  Fraunces,
+} from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -18,6 +24,12 @@ const barlow = Barlow({
   variable: "--font-barlow",
   subsets: ["latin"],
   weight: "600",
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 const geistMono = Geist_Mono({
@@ -40,7 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${barlow.variable} ${bebasNeue.variable} ${geistSans.variable} ${geistMono.variable} ${aeternus.variable} h-full antialiased`}
+      className={`${barlow.variable} ${bebasNeue.variable} ${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${aeternus.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

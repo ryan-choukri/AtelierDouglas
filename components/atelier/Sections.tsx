@@ -3,6 +3,7 @@ import Image from "next/image";
 import nordalIndustrie from "@/assets/work-nordal-industrie.png";
 import barberProject from "@/assets/work-barber-project.png";
 import metalforge from "@/assets/metalforge.png";
+import heroCamping from "@/assets/camping.png";
 import ryandevImg from "@/assets/ryandev.jpg";
 
 import { VisibilityConversion } from "@/components/atelier/VisibilityConversion";
@@ -15,7 +16,7 @@ const services = [
   {
     n: "01",
     title: "Création",
-    text: "Sites web conçus de zéro, de la première idée jusqu'à la mise en ligne.",
+    text: "Sites web conçus sur mesure, de la première idée jusqu'à la mise en ligne.",
   },
   {
     n: "02",
@@ -79,6 +80,14 @@ const projects = [
     url: "/chaudronerie",
   },
   {
+    name: "Camping Les Grands Chênes",
+    category: "Camping & Hébergement",
+    text: "Site de présentation premium pour un camping en Dordogne, avec galerie immersive, informations pratiques et réservation en ligne intégrée.",
+    img: heroCamping,
+    year: "2026",
+    url: "/camping",
+  },
+  {
     name: "Barber Project",
     category: "Site vitrine pour les Barbershops",
     text: "Un site vitrine moderne et élégant pour les salons de coiffure et barbershops, avec réservation en ligne.",
@@ -88,7 +97,7 @@ const projects = [
   },
   {
     name: "NORDAL",
-    category: "Industrie Lourd / Usinage",
+    category: "Industrie Lourde / Usinage",
     text: "Un site-portfolio, technique et morderne, pour une entreprise d'usinage de précision.",
     img: nordalIndustrie,
     year: "2026",
@@ -108,7 +117,7 @@ export function Work() {
             Quelques pièces
           </h2>
           <span className="label hidden text-walnut/70 sm:block">
-            Sélection — 03
+            Réalisations — 03
           </span>
         </div>
 
@@ -182,7 +191,7 @@ const benefits = [
   {
     n: "02",
     title: "100% mobile",
-    text: "Pensé pour les écrans d'abord, jusqu'au dernier pixel.",
+    text: "Pensé d’abord pour les écrans mobiles, jusqu’au dernier pixel.",
     icon: (
       <>
         <rect x="7" y="2.5" width="10" height="19" rx="2" />
@@ -193,7 +202,7 @@ const benefits = [
   {
     n: "03",
     title: "SEO local optimisé",
-    text: "Visible sur Google dès J+7 dans votre zone de chalandise.",
+    text: "Optimisé pour votre visibilité locale sur Google",
     icon: (
       <>
         <path d="M12 21s7-7.58 7-12a7 7 0 1 0-14 0c0 4.42 7 12 7 12Z" />
@@ -484,19 +493,19 @@ export function FinalCta() {
         </p>
         <div className="mt-12 flex flex-wrap items-center gap-6">
           <a
-            href="mailto:atelierdouglas@gmail.com"
+            href="mailto:atelierdouglas.web@gmail.com"
             className="group inline-flex items-center gap-2 rounded-full bg-terracotta px-7 py-4 text-sm font-medium text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5"
           >
-            Parler de votre projet
+            Parler de mon projet
             <span className="transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>
           </a>
           <a
-            href="mailto:atelierdouglas@gmail.com"
+            href="mailto:atelierdouglas.web@gmail.com"
             className="border-b border-ink/40 pb-1 text-sm text-ink transition-colors hover:border-ink"
           >
-            atelierdouglas@gmail.com
+            atelierdouglas.web@gmail.com
           </a>
         </div>
       </div>
@@ -532,7 +541,7 @@ export function Footer() {
           <ul className="space-y-2 text-sm text-espresso/60">
             <li>
               <a
-                href="#contact"
+                href="https://www.linkedin.com/in/ryan-choukri/"
                 className="transition-colors hover:text-terracotta"
               >
                 Instagram
@@ -540,7 +549,7 @@ export function Footer() {
             </li>
             <li>
               <a
-                href="#contact"
+                href="https://www.linkedin.com/in/ryan-choukri/"
                 className="transition-colors hover:text-terracotta"
               >
                 LinkedIn
@@ -551,6 +560,29 @@ export function Footer() {
         <p className="label col-span-full mt-6 border-t border-hairline pt-6 text-espresso/45">
           © 2026 Atelier Douglas
         </p>
+        <nav
+          aria-label="Légal"
+          className="label col-span-full flex flex-wrap gap-6 text-espresso/45"
+        >
+          <a
+            href="/mention-legal"
+            className="transition-colors hover:text-espresso"
+          >
+            Mentions légales
+          </a>
+          <a
+            href="/mention-legal"
+            className="transition-colors hover:text-espresso"
+          >
+            Politique de confidentialité
+          </a>
+          <a
+            href="/mention-legal"
+            className="transition-colors hover:text-espresso"
+          >
+            CGV
+          </a>
+        </nav>
       </div>
     </footer>
   );

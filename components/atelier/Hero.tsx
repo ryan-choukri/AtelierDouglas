@@ -55,9 +55,8 @@ export function Hero() {
             className="rise  mt-8 max-w-xl text-[1.0625rem] leading-relaxed text-walnut"
             style={{ animationDelay: "360ms" }}
           >
-            Création de site web &amp; design, refonte de sites web pour les
-            entreprises qui veulent une présence en ligne à la hauteur de leur
-            activité.
+            Des sites modernes qui donnent confiance et transforment vos
+            visiteurs en clients.
           </p>
 
           <div
@@ -77,7 +76,7 @@ export function Hero() {
               href="#contact"
               className="inline-flex items-center gap-2 rounded-full border border-espresso/25 px-6 py-3.5 text-sm font-medium text-espresso transition-colors duration-300 hover:border-terracotta hover:text-terracotta"
             >
-              Parler nous de votre projet
+              Parler de mon projet
             </a>
           </div>
         </div>

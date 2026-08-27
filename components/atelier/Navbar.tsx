@@ -98,7 +98,9 @@ export function Navbar() {
             href="#contact"
             className="group inline-flex items-center gap-1.5 rounded-full bg-terracotta px-3.5 py-2 text-[0.75rem] font-medium text-primary-foreground transition-all duration-300 hover:bg-terracotta-deep sm:px-4"
           >
-            <span className="hidden sm:inline">Parler de votre projet</span>
+            <span className="font-bold hidden sm:inline">
+              Parler de mon projet
+            </span>
             <span className="sm:hidden">Projet</span>
             <span className="transition-transform duration-300 group-hover:translate-x-0.5">
               →

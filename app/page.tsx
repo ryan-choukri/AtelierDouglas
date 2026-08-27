@@ -15,10 +15,9 @@ import {
   Footer,
 } from "@/components/atelier/Sections";
 
-const title = "Atelier Douglas — Studio web indépendant";
+const title = "Création & refonte de sites web | Atelier Douglas";
 const description =
-  "Design, développement et refonte de sites web pour les entreprises. Atelier Douglas est un studio web indépendant français.";
-
+  "Atelier Douglas crée et modernise les sites web d'entreprises : design sur mesure, performance, mobile et référencement local.";
 export const metadata: Metadata = {
   title,
   description,
@@ -42,7 +41,7 @@ export default function Index() {
         <main>
           <Hero />
           <Statement />
-          <Services />
+          {/* <Services /> */}
           <Work />
           <Philosophy />
           {/* <Atelier /> */}

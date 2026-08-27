@@ -1,0 +1,211 @@
+.camping-site h1,
+.camping-site h2,
+.camping-site h3,
+.camping-site h4,
+.camping-site p,
+.camping-site a,
+.camping-site button {
+  margin: 0;
+}
+/* ================================
+   VARIABLES CAMPING
+================================ */
+
+.font-display {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 500 !important;
+}
+.camping-site {
+  --radius: 0.75rem;
+
+  --background: oklch(0.985 0.004 95);
+  --foreground: oklch(0.26 0.026 145);
+
+  --card: oklch(0.995 0.004 95);
+  --card-foreground: oklch(0.26 0.026 145);
+
+  --popover: oklch(0.995 0.004 95);
+  --popover-foreground: oklch(0.26 0.026 145);
+
+  --primary: oklch(0.38 0.062 152);
+  --primary-foreground: oklch(0.985 0.01 95);
+
+  --secondary: oklch(0.93 0.024 88);
+  --secondary-foreground: oklch(0.32 0.04 150);
+
+  --muted: oklch(0.955 0.014 92);
+  --muted-foreground: oklch(0.5 0.02 130);
+
+  --accent: oklch(0.78 0.13 72);
+  --accent-foreground: oklch(0.24 0.03 60);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0.01 95);
+
+  --border: oklch(0.9 0.018 92);
+  --input: oklch(0.9 0.018 92);
+  --ring: oklch(0.38 0.062 152);
+
+  --sand: oklch(0.93 0.028 85);
+  --sand-deep: oklch(0.86 0.04 80);
+  --forest: oklch(0.38 0.062 152);
+  --forest-deep: oklch(0.25 0.045 152);
+  --sun: oklch(0.78 0.13 72);
+  --cream: oklch(0.975 0.012 92);
+
+  --shadow-soft: 0 20px 50px -30px oklch(0.25 0.045 152 / 0.45);
+
+  --shadow-lift: 0 30px 70px -35px oklch(0.25 0.045 152 / 0.55);
+
+  background: var(--background);
+  color: var(--foreground);
+
+  font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  overflow-x: hidden;
+  font-synthesis-weight: none;
+
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* ================================
+   RESET LOCAL
+================================ */
+
+.camping-site,
+.camping-site *,
+.camping-site *::before,
+.camping-site *::after {
+  box-sizing: border-box;
+  /* border-color: var(--border); */
+}
+
+/* ================================
+   LAYERING & Z-INDEX
+================================ */
+
+.camping-site > main {
+  position: relative;
+  z-index: 10;
+}
+
+.camping-site > nav {
+  position: relative;
+  z-index: 50;
+}
+
+/* ================================
+   TYPOGRAPHIE
+================================ */
+
+.camping-site h1,
+.camping-site h2,
+.camping-site h3 {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* ================================
+   SECTION STYLING
+================================ */
+
+.camping-site section {
+  position: relative;
+  z-index: 2;
+}
+
+.camping-site section[id] {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 100%
+  );
+}
+
+/* ================================
+   UTILITAIRES LOVABLE
+================================ */
+
+.camping-site .eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.camping-site .shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.camping-site .shadow-lift {
+  box-shadow: var(--shadow-lift);
+}
+
+.camping-site .overlay-scrim {
+  background: linear-gradient(
+    to bottom,
+    oklch(0.2 0.03 152 / 0.55) 0%,
+    oklch(0.2 0.03 152 / 0.3) 45%,
+    oklch(0.18 0.03 152 / 0.72) 100%
+  );
+}
+
+/* ================================
+   REVEAL
+================================ */
+
+.camping-site .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: opacity, transform;
+}
+
+.camping-site .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ================================
+   REDUCED MOTION
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .camping-site .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+.camping-site footer {
+  color: var(--cream);
+  background-color: var(--primary) !important;
+}
+
+.camping-site footer .eyebrow {
+  color: var(--cream);
+  opacity: 1;
+}
+
+.camping-site footer a {
+  color: var(--cream);
+}
+
+.camping-site footer p,
+.camping-site footer li {
+  color: var(--cream);
+}
