@@ -3,6 +3,7 @@ import Image from "next/image";
 import nordalIndustrie from "@/assets/work-nordal-industrie.png";
 import barberProject from "@/assets/work-barber-project.png";
 import metalforge from "@/assets/metalforge.png";
+import ryandevImg from "@/assets/ryandev.jpg";
 
 import { VisibilityConversion } from "@/components/atelier/VisibilityConversion";
 
@@ -171,21 +172,123 @@ export function Work() {
   );
 }
 
+const benefits = [
+  {
+    n: "01",
+    title: "Site rapide",
+    text: "Score Google PageSpeed 90+, dès la mise en ligne.",
+    icon: <path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" strokeLinejoin="round" />,
+  },
+  {
+    n: "02",
+    title: "100% mobile",
+    text: "Pensé pour les écrans d'abord, jusqu'au dernier pixel.",
+    icon: (
+      <>
+        <rect x="7" y="2.5" width="10" height="19" rx="2" />
+        <path d="M11 18h2" strokeLinecap="round" />
+      </>
+    ),
+  },
+  {
+    n: "03",
+    title: "SEO local optimisé",
+    text: "Visible sur Google dès J+7 dans votre zone de chalandise.",
+    icon: (
+      <>
+        <path d="M12 21s7-7.58 7-12a7 7 0 1 0-14 0c0 4.42 7 12 7 12Z" />
+        <circle cx="12" cy="9" r="2.4" />
+      </>
+    ),
+  },
+  {
+    n: "04",
+    title: "Design sur mesure",
+    text: "Aucun site générique. Chaque pixel est pensé pour votre activité.",
+    icon: (
+      <>
+        <path d="M4 20 12 4l8 16H4Z" strokeLinejoin="round" />
+        <path d="M8.5 14h7" strokeLinecap="round" />
+      </>
+    ),
+  },
+  {
+    n: "05",
+    title: "Conversion",
+    text: "Pensé pour transformer vos visiteurs en clients.",
+    icon: (
+      <>
+        <path
+          d="M3 17l6-6 4 4 8-8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path d="M15 6h6v6" strokeLinecap="round" strokeLinejoin="round" />
+      </>
+    ),
+  },
+  {
+    n: "06",
+    title: "Hébergement sécurisé",
+    text: "Un site rapide, fiable et protégé, sans mauvaise surprise.",
+    icon: (
+      <>
+        <path d="M12 2 4 5v6c0 5 3.4 8.6 8 11 4.6-2.4 8-6 8-11V5l-8-3Z" />
+        <path d="m9 12 2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+      </>
+    ),
+  },
+];
+
 export function Philosophy() {
   return (
-    <section className="grain custom-bg-terracotta">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-5 py-28 sm:px-6 md:grid-cols-12 md:py-40">
-        <h2 className="display col-span-full text-[clamp(2.1rem,5.6vw,4.8rem)] text-ink md:col-span-8">
-          Pas de template.
-          <br />
-          Pas de site qui ressemble
-          <br />à celui du voisin.
-        </h2>
-        <p className="col-span-full self-end text-[1rem] leading-relaxed text-ink/80 md:col-span-4">
-          Chaque projet commence par comprendre l&apos;entreprise, ses clients
-          et ce qu&apos;elle doit transmettre. Ensuite seulement viennent le
-          design et le code.
-        </p>
+    <section className="grain custom-bg-terracotta border-b border-hairline">
+      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 md:py-16 mb-10">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-xl">
+            <span className="label text-ink/70">Pourquoi Atelier Douglas</span>
+          </div>
+          <p className="label max-w-xs text-ink/70 md:text-right">
+            Six raisons de choisir un site fabriqué sur mesure
+          </p>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {benefits.map((b) => (
+            <article
+              key={b.n}
+              className="cursor-pointer group relative flex flex-col gap-3 border border-hairline bg-paper p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-terracotta/50"
+            >
+              <div className="flex items-center justify-between">
+                <span className="label text-terracotta">{b.n}</span>
+                <span className="flex h-9 w-9 items-center justify-center border border-hairline text-terracotta transition-all duration-500 group-hover:scale-110 group-hover:border-terracotta/60 group-hover:bg-terracotta/10">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-[18px] w-[18px]"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                    aria-hidden
+                  >
+                    {b.icon}
+                  </svg>
+                </span>
+              </div>
+              <div>
+                <h3 className="display text-[1.75rem] text-espresso">
+                  {b.title}
+                </h3>
+                <p className="mt-2.5 text-[0.875rem] leading-relaxed text-walnut">
+                  {b.text}
+                </p>
+              </div>
+              <span
+                className="mt-auto h-px w-full bg-hairline transition-colors duration-500 group-hover:bg-terracotta/40"
+                aria-hidden
+              />
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -275,6 +378,97 @@ export function Process() {
   );
 }
 
+const aboutStats = [
+  { value: "5+", label: "Ans de métier" },
+  { value: "20+", label: "Projets livrés" },
+  { value: "100%", label: "Fait main" },
+];
+
+export function About() {
+  return (
+    <section
+      id="fondateur"
+      className="darker-part grain border-b border-hairline"
+    >
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 px-5 py-24 sm:px-6 md:grid-cols-12 md:py-32">
+        <div className="md:col-span-5">
+          <div className="relative mx-auto max-w-xs md:max-w-none">
+            <span
+              className="drift-slow absolute -right-6 -top-8 h-28 w-28 rounded-full bg-terracotta/80"
+              aria-hidden
+            />
+            <div
+              className="absolute -left-5 -bottom-5 h-[92%] w-[92%] rotate-[-3deg] border border-hairline bg-paper"
+              aria-hidden
+            />
+            <div className="relative aspect-[2/3] overflow-hidden border border-hairline">
+              <Image
+                src={ryandevImg}
+                alt="Ryan, fondateur d'Atelier Douglas"
+                fill
+                sizes="(min-width: 768px) 360px, 80vw"
+                className="object-cover grayscale-[0.1] contrast-[1.05]"
+              />
+              <span className="label absolute bottom-4 left-4 bg-terracotta px-3 py-1.5 text-primary-foreground">
+                Ryan — Fondateur
+              </span>
+            </div>
+            <span
+              className="label absolute -right-8 top-10 hidden rotate-90 text-[0.5625rem] text-walnut/70 md:block"
+              aria-hidden
+            >
+              Développeur — France
+            </span>
+          </div>
+        </div>
+
+        <div className="md:col-span-7 md:pt-4">
+          <span className="label text-walnut/70">
+            L&apos;humain derrière l&apos;atelier
+          </span>
+          <h2 className="display mt-6 text-[clamp(2.2rem,5vw,3.9rem)] text-espresso">
+            Un développeur,
+            <br />
+            pas une agence.
+          </h2>
+          <p className="mt-8 max-w-xl text-[1.0625rem] leading-relaxed text-walnut">
+            Je m&apos;appelle Ryan. Je dessine, développe et mets en ligne
+            chaque site moi-même, du premier croquis au dernier pixel sans
+            sous-traitance, sans intermédiaire.
+          </p>
+          <p className="mt-5 max-w-xl text-[0.9375rem] leading-relaxed text-walnut/80">
+            Un seul interlocuteur, une exigence d&apos;artisan et des sites
+            pensés pour durer, pas pour cocher une case.
+          </p>
+
+          <div className="mt-12 grid grid-cols-3 gap-6 border-t border-hairline pt-8">
+            {aboutStats.map((s) => (
+              <div key={s.label}>
+                <span className="display block text-[clamp(1.8rem,3.4vw,2.6rem)] text-terracotta">
+                  {s.value}
+                </span>
+                <span className="label mt-2 block text-walnut/70">
+                  {s.label}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="#contact"
+            className="group mt-12 inline-flex items-center gap-2 border-b border-espresso/30 pb-1 text-sm font-medium text-espresso transition-colors hover:border-terracotta hover:text-terracotta"
+          >
+            Discutons de votre projet
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function FinalCta() {
   return (
     <section id="contact" className="grain bg-terracotta">
@@ -290,7 +484,7 @@ export function FinalCta() {
         </p>
         <div className="mt-12 flex flex-wrap items-center gap-6">
           <a
-            href="mailto:hello@atelierdouglas.fr"
+            href="mailto:atelierdouglas@gmail.com"
             className="group inline-flex items-center gap-2 rounded-full bg-terracotta px-7 py-4 text-sm font-medium text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5"
           >
             Parler de votre projet
@@ -299,10 +493,10 @@ export function FinalCta() {
             </span>
           </a>
           <a
-            href="mailto:hello@atelierdouglas.fr"
+            href="mailto:atelierdouglas@gmail.com"
             className="border-b border-ink/40 pb-1 text-sm text-ink transition-colors hover:border-ink"
           >
-            hello@atelierdouglas.fr
+            atelierdouglas@gmail.com
           </a>
         </div>
       </div>

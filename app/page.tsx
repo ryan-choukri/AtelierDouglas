@@ -10,6 +10,7 @@ import {
   Philosophy,
   Atelier,
   Process,
+  About,
   FinalCta,
   Footer,
 } from "@/components/atelier/Sections";
@@ -46,6 +47,7 @@ export default function Index() {
           <Philosophy />
           {/* <Atelier /> */}
           <Process />
+          <About />
           <FinalCta />
         </main>
         <Footer />
