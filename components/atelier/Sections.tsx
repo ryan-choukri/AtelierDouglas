@@ -105,6 +105,11 @@ const projects = [
   },
 ];
 
+function getDomainFromName(name: string): string {
+  //remove spaces and special characters from name
+  return name.replace(/[^a-zA-Z0-9]/g, "").toLowerCase() + ".fr";
+}
+
 export function Work() {
   return (
     <section
@@ -134,18 +139,34 @@ export function Work() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Voir le projet ${p.name}`}
-                className={`cursor-pointer group relative overflow-hidden border border-hairline bg-paper md:col-span-8 ${
+                className={`cursor-pointer group relative overflow-hidden rounded-t-2xl rounded-b-lg border border-hairline bg-paper md:col-span-8 ${
                   i % 2 === 1 ? "md:col-start-5" : ""
                 }`}
               >
-                <Image
-                  src={p.img}
-                  alt={`Aperçu du site ${p.name}`}
-                  loading="lazy"
-                  width={1280}
-                  height={960}
-                  className="w-full transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
-                />
+                <div className="flex flex-col">
+                  {/* Browser bar */}
+                  <div className="flex items-center gap-3 px-4 py-2.5 md:py-3">
+                    {/* Three circles macOS style */}
+                    <div className="flex gap-2">
+                      <div className="h-2 w-2 rounded-full bg-red-500 md:h-2.5 md:w-2.5" />
+                      <div className="h-2 w-2 rounded-full bg-yellow-400 md:h-2.5 md:w-2.5" />
+                      <div className="h-2 w-2 rounded-full bg-green-500 md:h-2.5 md:w-2.5" />
+                    </div>
+                    {/* Domain name */}
+                    <span className="text-[0.7rem] text-stone-400 md:text-[0.75rem]">
+                      {getDomainFromName(p.name)}
+                    </span>
+                  </div>
+                  {/* Image */}
+                  <Image
+                    src={p.img}
+                    alt={`Aperçu du site ${p.name}`}
+                    loading="lazy"
+                    width={1280}
+                    height={960}
+                    className="w-full transition-transform duration-[900ms] ease-out group-hover:scale-[1.02]"
+                  />
+                </div>
               </a>
               <div
                 className={`md:col-span-4 ${i % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""}`}
