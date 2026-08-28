@@ -1,149 +1,312 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mentions Légales — Atelier Douglas",
+  title: "Mentions légales — Atelier Douglas",
   description:
-    "Mentions légales et informations légales d'Atelier Douglas, studio web indépendant.",
+    "Mentions légales et informations relatives au site Atelier Douglas.",
 };
 
 export default function MentionsLegales() {
   return (
     <div className="min-h-screen bg-white">
       <div className="mx-auto max-w-3xl px-5 py-16 sm:px-6 md:py-24">
+        {/* Header */}
         <div className="mb-12">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700"
+            className="inline-flex items-center gap-2 text-sm text-blue-600 transition-colors hover:text-blue-700"
           >
             ← Retour
           </Link>
+
           <h1 className="mt-6 text-4xl font-bold text-gray-900 md:text-5xl">
-            Mentions Légales
+            Mentions légales
           </h1>
+
+          <p className="mt-4 text-gray-500">
+            Informations légales relatives au site atelierdouglas.fr
+          </p>
         </div>
 
         <div className="prose prose-lg max-w-none text-gray-700">
+          {/* Éditeur */}
           <section className="mb-10">
             <h2 className="text-2xl font-semibold text-gray-900">
-              Informations légales
+              Éditeur du site
             </h2>
+
+            <div className="mt-4 space-y-2">
+              <p>
+                Le site{" "}
+                <strong className="font-semibold text-gray-900">
+                  atelierdouglas.fr
+                </strong>{" "}
+                est édité par :
+              </p>
+
+              <p>
+                <strong>Nom commercial :</strong> Atelier Douglas
+              </p>
+
+              <p>
+                <strong>Entrepreneur :</strong> Ryan Rouag
+              </p>
+
+              <p>
+                <strong>Statut juridique :</strong> Entrepreneur individuel —
+                Micro-entrepreneur
+              </p>
+
+              <p>
+                <strong>Immatriculation :</strong> Registre national des
+                entreprises (RNE) — sur demande
+              </p>
+
+              <p>
+                <strong>Adresse :</strong> 123 Rue des Fleurs, 75000 Paris,
+                France
+              </p>
+
+              <p>
+                <strong>Email :</strong>{" "}
+                <a
+                  href="mailto:atelierdouglas.web@gmail.com"
+                  className="text-blue-600 hover:text-blue-700"
+                >
+                  atelierdouglas.web@gmail.com
+                </a>
+              </p>
+
+              {/*
+                Si tu as un numéro de TVA intracommunautaire :
+                
+                <p>
+                  <strong>TVA intracommunautaire :</strong> FRXXXXXXXXXXX
+                </p>
+
+                Si tu n'es pas redevable de la TVA, ne mets pas de faux numéro ici.
+              */}
+            </div>
+          </section>
+
+          {/* Directeur publication */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold text-gray-900">
+              Directeur de la publication
+            </h2>
+
             <p className="mt-4">
-              <strong>Nom de l&apos;entreprise :</strong> Atelier Douglas
+              Le directeur de la publication est <strong>Ryan Rouag</strong>, en
+              qualité d&apos;entrepreneur individuel exploitant Atelier Douglas.
             </p>
-            <p>
-              <strong>Statut :</strong> Entrepreneur individuel /
-              Microentrepreneur
-            </p>
-            <p>
-              <strong>Adresse :</strong> France
-            </p>
-            <p>
-              <strong>Email :</strong>{" "}
+          </section>
+
+          {/* Hébergeur */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold text-gray-900">
+              Hébergement
+            </h2>
+
+            <p className="mt-4">Le site est hébergé par :</p>
+
+            <div className="mt-3 space-y-1">
+              <p>
+                <strong>Netlify, Inc.</strong>
+              </p>
+
+              <p>
+                101 2nd Street
+                <br />
+                San Francisco, CA 94105
+                <br />
+                États-Unis
+              </p>
+
+              <p>
+                Email :{" "}
+                <a
+                  href="mailto:support@netlify.com"
+                  className="text-blue-600 hover:text-blue-700"
+                >
+                  support@netlify.com
+                </a>
+              </p>
+
               <a
-                href="mailto:atelierdouglas.web@gmail.com"
-                className="text-blue-600 hover:text-blue-700"
+                href="https://www.netlify.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700"
               >
-                atelierdouglas.web@gmail.com
+                www.netlify.com
+                <ArrowUpRight size={15} />
               </a>
-            </p>
+            </div>
           </section>
 
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold text-gray-900">
-              Responsabilité
-            </h2>
-            <p className="mt-4">
-              Le propriétaire du site s&apos;efforce de fournir des informations
-              précises et à jour sur ce site. Cependant, il ne peut pas garantir
-              l&apos;exactitude ou l&apos;exhaustivité du contenu et ne sera pas
-              responsable des erreurs, omissions ou inexactitudes.
-            </p>
-            <p className="mt-3">
-              Les services et informations fournis sur ce site sont fournis à
-              titre informatif uniquement. Aucune information sur ce site ne
-              constitue un conseil professionnel.
-            </p>
-          </section>
-
+          {/* Propriété intellectuelle */}
           <section className="mb-10">
             <h2 className="text-2xl font-semibold text-gray-900">
               Propriété intellectuelle
             </h2>
+
             <p className="mt-4">
-              Tout le contenu de ce site, y compris les textes, graphiques,
-              logos, images et logiciels, est la propriété d&apos;Atelier
-              Douglas ou de ses fournisseurs de contenu et est protégé par les
-              lois internationales sur les droits d&apos;auteur.
+              Sauf mention contraire, l&apos;ensemble des éléments présents sur
+              ce site, notamment les textes, créations graphiques, interfaces,
+              éléments visuels, logos, illustrations, photographies, vidéos,
+              animations et code, est la propriété d&apos;Atelier Douglas ou est
+              utilisé avec l&apos;autorisation de ses titulaires respectifs.
             </p>
+
             <p className="mt-3">
-              Aucune partie de ce site ne peut être reproduite, distribuée ou
-              transmise sous quelque forme ou par quelque moyen que ce soit,
-              sans la permission écrite préalable d&apos;Atelier Douglas.
+              Toute reproduction, représentation, adaptation, modification ou
+              exploitation, totale ou partielle, de ces éléments sans
+              autorisation préalable écrite est interdite, sauf dans les cas
+              prévus par la législation applicable.
+            </p>
+
+            <p className="mt-3">
+              Les marques, logos, photographies et autres éléments appartenant à
+              des clients, partenaires ou tiers demeurent la propriété de leurs
+              titulaires respectifs.
             </p>
           </section>
 
+          {/* Responsabilité */}
           <section className="mb-10">
             <h2 className="text-2xl font-semibold text-gray-900">
-              Limitation de responsabilité
+              Responsabilité
             </h2>
+
             <p className="mt-4">
-              Atelier Douglas ne sera pas responsable de tout dommage direct,
-              indirect, accidentel, spécial ou consécutif découlant de
-              l&apos;utilisation de ce site ou du contenu, y compris, mais sans
-              s&apos;y limiter, la perte de profits, les interruptions
-              d&apos;activité ou la perte de données.
+              Atelier Douglas s&apos;efforce de fournir sur ce site des
+              informations aussi exactes et à jour que possible. Toutefois,
+              aucune garantie ne peut être donnée quant à l&apos;exactitude,
+              l&apos;exhaustivité ou l&apos;actualité permanente des
+              informations publiées.
+            </p>
+
+            <p className="mt-3">
+              Atelier Douglas ne pourra être tenu responsable des conséquences
+              résultant de l&apos;utilisation des informations présentes sur le
+              site ou de l&apos;indisponibilité temporaire de celui-ci, sous
+              réserve des dispositions légales impératives applicables.
             </p>
           </section>
 
+          {/* Liens externes */}
           <section className="mb-10">
             <h2 className="text-2xl font-semibold text-gray-900">
               Liens externes
             </h2>
+
             <p className="mt-4">
-              Ce site peut contenir des liens vers des sites externes. Atelier
-              Douglas n&apos;est pas responsable du contenu, de
-              l&apos;exactitude ou des pratiques de ces sites externes.
-              L&apos;utilisation de liens vers des sites externes se fait aux
-              risques et périls de l&apos;utilisateur.
+              Le site peut contenir des liens vers des sites ou services édités
+              par des tiers. Atelier Douglas n&apos;exerce aucun contrôle sur
+              leur contenu et ne peut être tenu responsable de leur
+              disponibilité, de leur contenu ou de leurs pratiques.
             </p>
           </section>
 
+          {/* Données personnelles */}
           <section className="mb-10">
             <h2 className="text-2xl font-semibold text-gray-900">
               Données personnelles
             </h2>
+
             <p className="mt-4">
-              Atelier Douglas respecte la confidentialité de ses visiteurs. Les
-              données personnelles collectées sont utilisées uniquement à des
-              fins légitimes et ne seront pas partagées avec des tiers sans
-              consentement.
+              Atelier Douglas peut être amené à traiter des données
+              personnelles, notamment lorsque vous utilisez un formulaire de
+              contact ou contactez directement l&apos;entreprise.
             </p>
+
             <p className="mt-3">
-              Pour plus d&apos;informations, veuillez consulter notre politique
-              de confidentialité.
+              Ces données sont utilisées uniquement pour répondre aux demandes,
+              assurer les échanges commerciaux et, le cas échéant, exécuter les
+              prestations demandées.
+            </p>
+
+            <p className="mt-3">
+              Conformément au règlement général sur la protection des données
+              (RGPD) et à la loi Informatique et Libertés, vous disposez
+              notamment de droits d&apos;accès, de rectification,
+              d&apos;effacement, de limitation et d&apos;opposition concernant
+              vos données personnelles.
+            </p>
+
+            <p className="mt-3">
+              Vous pouvez exercer vos droits en écrivant à{" "}
+              <a
+                href="mailto:atelierdouglas.web@gmail.com"
+                className="text-blue-600 hover:text-blue-700"
+              >
+                atelierdouglas.web@gmail.com
+              </a>
+              .
+            </p>
+
+            <p className="mt-3">
+              Vous disposez également du droit d&apos;introduire une réclamation
+              auprès de la Commission nationale de l&apos;informatique et des
+              libertés (CNIL).
+            </p>
+
+            <p className="mt-3">
+              Pour connaître précisément les traitements réalisés, leurs
+              finalités, bases juridiques et durées de conservation, consultez
+              notre{" "}
+              <Link
+                href="/politique-confidentialite"
+                className="text-blue-600 hover:text-blue-700"
+              >
+                politique de confidentialité
+              </Link>
+              .
             </p>
           </section>
 
+          {/* Cookies */}
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold text-gray-900">Cookies</h2>
+
+            <p className="mt-4">
+              Le site peut utiliser des cookies ou technologies similaires
+              strictement nécessaires à son fonctionnement.
+            </p>
+
+            <p className="mt-3">
+              Si des outils de mesure d&apos;audience, publicitaires ou autres
+              traceurs nécessitant un consentement sont utilisés, ils ne doivent
+              être déposés qu&apos;après avoir recueilli le consentement de
+              l&apos;utilisateur lorsque celui-ci est requis par la
+              réglementation applicable.
+            </p>
+          </section>
+
+          {/* Droit applicable */}
           <section className="mb-10">
             <h2 className="text-2xl font-semibold text-gray-900">
-              Modification des conditions
+              Droit applicable
             </h2>
+
             <p className="mt-4">
-              Atelier Douglas se réserve le droit de modifier ces mentions
-              légales à tout moment. Les modifications seront publiées sur cette
-              page, et l&apos;utilisation continue du site après les
-              modifications constitue une acceptation des nouvelles conditions.
+              Le présent site et ses mentions légales sont soumis au droit
+              français, sous réserve des règles impératives éventuellement
+              applicables.
             </p>
           </section>
 
+          {/* Contact */}
           <section className="mb-10">
             <h2 className="text-2xl font-semibold text-gray-900">Contact</h2>
+
             <p className="mt-4">
-              Pour toute question concernant ces mentions légales, veuillez nous
-              contacter à :
+              Pour toute question concernant le site ou les présentes mentions
+              légales :
             </p>
+
             <p className="mt-3">
               <a
                 href="mailto:atelierdouglas.web@gmail.com"
@@ -154,9 +317,10 @@ export default function MentionsLegales() {
             </p>
           </section>
 
+          {/* Update */}
           <div className="mt-12 border-t border-gray-200 pt-8">
             <p className="text-sm text-gray-500">
-              Dernière mise à jour : {new Date().toLocaleDateString("fr-FR")}
+              Dernière mise à jour : 28 août 2026
             </p>
           </div>
         </div>

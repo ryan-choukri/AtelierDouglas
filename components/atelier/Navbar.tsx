@@ -39,13 +39,13 @@ export function Navbar() {
 
       <nav
         aria-label="Navigation principale"
-        className={` text-xl mx-auto flex max-w-6xl items-center gap-4 rounded-full px-4 py-2.5 transition-all duration-500 sm:px-5 ${
+        className={`font-sans text-xl mx-auto flex max-w-6xl items-center gap-4 rounded-full px-4 py-2.5 transition-all duration-500 sm:px-5 ${
           scrolled ? "glass glass-scrolled" : "glass"
         }`}
       >
         <a
           href="#top"
-          className="display text-[1.8rem] shrink-0 text-espresso transition-opacity hover:opacity-60"
+          className="pt-[5px] pl-1 display text-[1.8rem] shrink-0 text-espresso transition-opacity hover:opacity-60"
         >
           <span className="hidden sm:inline">Atelier Douglas</span>
           <span className="sm:hidden">A. Douglas</span>
@@ -93,7 +93,7 @@ export function Navbar() {
           </div>
         </div>
 
-        <div className="ml-auto flex items-center gap-2 md:ml-0">
+        <div className="relative left-[8px] ml-auto flex items-center gap-2 md:ml-0">
           <a
             href="#contact"
             className="group inline-flex items-center gap-1.5 rounded-full bg-terracotta px-3.5 py-2 text-[0.75rem] font-medium text-primary-foreground transition-all duration-300 hover:bg-terracotta-deep sm:px-4"
