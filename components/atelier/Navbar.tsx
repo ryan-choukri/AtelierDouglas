@@ -39,7 +39,7 @@ export function Navbar() {
 
       <nav
         aria-label="Navigation principale"
-        className={`font-sans text-xl mx-auto flex max-w-6xl items-center gap-4 rounded-full px-4 py-2.5 transition-all duration-500 sm:px-5 ${
+        className={`font-sans text-xl mx-auto flex max-w-7xl items-center gap-4 rounded-full px-4 py-2.5 transition-all duration-500 sm:px-5 ${
           scrolled ? "glass glass-scrolled" : "glass"
         }`}
       >
@@ -124,7 +124,7 @@ export function Navbar() {
       </nav>
 
       {open && (
-        <div className="glass mx-auto mt-2 max-w-6xl rounded-3xl p-5 md:hidden">
+        <div className="glass mx-auto mt-2 max-w-7xl rounded-3xl p-5 md:hidden">
           <ul className="flex flex-col gap-4">
             {links.map((l) => (
               <li key={l.href}>

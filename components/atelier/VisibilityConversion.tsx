@@ -112,7 +112,7 @@ export function VisibilityConversion() {
       id="visibilite"
       className="darker-part grain border-b border-hairline"
     >
-      <div className="mx-auto max-w-6xl px-5 py-8 sm:px-6 md:py-20">
+      <div className="mx-auto max-w-7xl px-5 py-8 sm:px-6 md:py-20">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-8">
           <div className="md:col-span-5">
             <span className="label text-terracotta">

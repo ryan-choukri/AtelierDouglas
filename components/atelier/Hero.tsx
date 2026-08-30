@@ -27,7 +27,7 @@ export function Hero() {
       id="top"
       className="grain relative min-h-[96svh] overflow-hidden border-b border-hairline pt-28 sm:pt-32"
     >
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-14 px-5 pb-20 sm:px-6 lg:grid-cols-12 lg:gap-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-5 pb-20 sm:px-6 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-6 lg:pt-10">
           <p
             className="label rise text-walnut"
@@ -188,7 +188,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="mx-auto flex max-w-6xl items-center justify-between border-t border-hairline px-5 py-4 sm:px-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between border-t border-hairline px-5 py-4 sm:px-6">
         <span className="label text-walnut/70">Défiler</span>
         <span className="label text-walnut/70">01 — Atelier Douglas</span>
       </div>

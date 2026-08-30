@@ -6,6 +6,7 @@ import metalforge from "@/assets/metalforge.png";
 import heroCamping from "@/assets/camping.png";
 import ryandevImg from "@/assets/ryandev.jpg";
 
+import { ContactForm } from "@/components/atelier/ContactForm";
 import { VisibilityConversion } from "@/components/atelier/VisibilityConversion";
 
 export function Statement() {
@@ -33,7 +34,7 @@ const services = [
 export function Services() {
   return (
     <section id="services" className="grain border-b border-hairline">
-      <div className="mx-auto max-w-6xl px-5 py-24 sm:px-6 md:py-32">
+      <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 md:py-32">
         <div className="flex items-baseline justify-between border-b border-hairline pb-6">
           <h2 className="display text-[clamp(2rem,5vw,3.75rem)] text-espresso">
             Ce qu&apos;on fabrique
@@ -116,7 +117,7 @@ export function Work() {
       id="realisations"
       className="darker-part grain border-b border-hairline"
     >
-      <div className="mx-auto max-w-6xl px-5 py-24 sm:px-6 md:py-32">
+      <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 md:py-32">
         <div className="flex items-baseline justify-between border-b border-hairline pb-6">
           <h2 className="display text-[clamp(2rem,5vw,3.75rem)] text-espresso">
             Quelques pièces
@@ -273,7 +274,7 @@ const benefits = [
 export function Philosophy() {
   return (
     <section className="grain custom-bg-terracotta border-b border-hairline">
-      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 md:py-16 mb-10">
+      <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 md:py-16 mb-10">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
             <span className="label text-ink/70">Pourquoi Atelier Douglas</span>
@@ -328,7 +329,7 @@ export function Atelier() {
   const steps = ["Design", "Développement", "Mise en ligne", "Évolution"];
   return (
     <section id="atelier" className="grain border-b border-hairline">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-5 py-24 sm:px-6 md:grid-cols-12 md:py-32">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 py-24 sm:px-6 md:grid-cols-12 md:py-32">
         <div className="md:col-span-4">
           <h2 className="display text-[clamp(2rem,5vw,3.6rem)] text-espresso">
             L&apos;atelier
@@ -385,7 +386,7 @@ const process = [
 export function Process() {
   return (
     <section className="grain border-b border-hairline">
-      <div className="mx-auto max-w-6xl px-5 py-24 sm:px-6 md:py-32">
+      <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 md:py-32">
         <span className="label text-walnut/70">Méthode</span>
         <ol className="mt-10">
           {process.map((p) => (
@@ -420,7 +421,7 @@ export function About() {
       id="fondateur"
       className="darker-part grain border-b border-hairline"
     >
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 px-5 py-24 sm:px-6 md:grid-cols-12 md:py-32">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-5 py-24 sm:px-6 md:grid-cols-12 md:py-32">
         <div className="md:col-span-5">
           <div className="relative mx-auto max-w-xs md:max-w-none">
             <span
@@ -502,32 +503,30 @@ export function About() {
 export function FinalCta() {
   return (
     <section id="contact" className="grain bg-terracotta">
-      <div className="mx-auto max-w-6xl px-5 py-28 sm:px-6 md:py-40">
-        <h2 className="display text-[clamp(2.6rem,9vw,7.5rem)] text-ink">
-          On fabrique
-          <br />
-          quoi pour vous ?
-        </h2>
-        <p className="mt-8 max-w-lg text-[1.0625rem] leading-relaxed text-ink/80">
-          Un nouveau site, une refonte ou simplement l&apos;envie de faire mieux
-          ?
-        </p>
-        <div className="mt-12 flex flex-wrap items-center gap-6">
-          <a
-            href="mailto:atelierdouglas.web@gmail.com"
-            className="group inline-flex items-center gap-2 rounded-full bg-terracotta px-7 py-4 text-sm font-medium text-primary-foreground transition-transform duration-300 hover:-translate-y-0.5"
-          >
-            Parler de mon projet
-            <span className="transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
-          </a>
-          <a
-            href="mailto:atelierdouglas.web@gmail.com"
-            className="border-b border-ink/40 pb-1 text-sm text-ink transition-colors hover:border-ink"
-          >
-            atelierdouglas.web@gmail.com
-          </a>
+      <div className=" grid grid-cols-12 mx-auto max-w-7xl px-2 py-12 sm:px-6 md:py-15">
+        <div className="col-span-12 md:col-span-5 px-3 sm:px-5">
+          <h2 className="display text-[clamp(2.6rem,9vw,7.5rem)] text-ink">
+            On fabrique
+            <br />
+            quoi pour vous ?
+          </h2>
+          <p className="mb-12 sm:mb-16 mt-8 max-w-lg text-[1.0625rem] leading-relaxed text-ink/80">
+            Un nouveau site, une refonte ou simplement l&apos;envie de faire
+            mieux ?<br />
+            Envoyez-moi un message par mail ou sur notre formulaire de contact
+            dédié. (réponse sous 24h)
+            <br />
+            <a
+              href="mailto:atelierdouglas.web@gmail.com"
+              className="border-b border-ink/40 pb-1 text-ink transition-colors hover:border-ink"
+            >
+              atelierdouglas.web@gmail.com
+            </a>
+          </p>
+        </div>
+        {/* split in col heach div container */}
+        <div className="col-span-12 md:col-span-7">
+          <ContactForm />
         </div>
       </div>
     </section>
@@ -537,7 +536,7 @@ export function FinalCta() {
 export function Footer() {
   return (
     <footer className="grain bg-paper">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-5 py-16 sm:px-6 md:grid-cols-12">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 py-16 sm:px-6 md:grid-cols-12">
         <div className="md:col-span-5">
           <p className="label text-espresso">Atelier Douglas</p>
           <p className="mt-3 text-sm text-espresso/60">
