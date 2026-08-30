@@ -118,7 +118,7 @@ export function VisibilityConversion() {
             <span className="label text-terracotta">
               Visibilité &amp; conversion
             </span>
-            <h2 className="display mt-4 text-[clamp(2rem,5vw,3.2rem)] text-espresso">
+            <h2 className="display mt-4 text-[clamp(2.2rem,5vw,3.2rem)] text-espresso">
               Un site pensé pour être trouvé. Et surtout, pour convertir
               <span className="text-terracotta">.</span>
             </h2>

@@ -18,21 +18,21 @@ export const OFFERS: Offer[] = [
     id: "essentiel",
     name: "Essentiel",
     description:
-      "Un site vitrine simple et efficace pour présenter votre activité.",
+      "Un site vitrine complet avec toutes les fonctionnalités essentielles pour présenter votre activité.",
     price: 490,
   },
   {
     id: "pro",
     name: "Pro",
     description:
-      "Un site vitrine complet avec fonctionnalités avancées pour développer votre activité.",
+      "Un site professionnel avec des fonctionnalités avancées pour booster votre activité.",
     price: 690,
   },
   {
     id: "premium",
-    name: "Premium",
+    name: "Sur mesure",
     description:
-      "Un site vitrine premium avec toutes les fonctionnalités et un design sur mesure.",
+      "Un projet sur mesure pour répondre à vos besoins spécifiques et complexes.",
     price: 1280,
   },
 ];
@@ -92,7 +92,9 @@ export function ContactForm() {
   } | null>(null);
   const [promoError, setPromoError] = useState<string | null>(null);
   const [errors, setErrors] = useState<Errors>({});
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
   const quote = computeQuote(offerId, appliedPromo?.rate ?? 0);
 
@@ -111,9 +113,14 @@ export function ContactForm() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
+    console.log("Form data:", Object.fromEntries(data.entries()));
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
+    const activity = String(data.get("activity") ?? "").trim();
+    const phone = String(data.get("phone") ?? "").trim();
+    const offer = (id: Offer["id"]) =>
+      OFFERS.find((offer) => offer.id === id)?.name;
 
     const next: Errors = {};
     if (!name) next.name = "Merci d'indiquer votre nom.";
@@ -125,9 +132,34 @@ export function ContactForm() {
     if (Object.keys(next).length > 0) return;
 
     setStatus("loading");
-    // Prêt à être branché sur un backend / service email.
-    await new Promise((r) => setTimeout(r, 1100));
-    setStatus("success");
+
+    try {
+      console.log("Form data to be sent:", {
+        name,
+        email,
+        message,
+        activity,
+        phone,
+        offer,
+      });
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message, activity, phone, offer }),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setPromoInput("");
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setStatus("error");
+    }
   }
 
   if (status === "success") {
@@ -150,6 +182,7 @@ export function ContactForm() {
       </div>
     );
   }
+  console.log("Current status:", status);
 
   return (
     <form
@@ -208,28 +241,43 @@ export function ContactForm() {
                 aria-pressed={active}
                 onClick={() => setOfferId(offer.id)}
                 className={cn(
-                  "cursor-pointer rounded-xl border px-4 py-3 text-center transition-all duration-300",
+                  "flex min-h-[140px] flex-col justify-between cursor-pointer rounded-xl border px-4 py-3 text-center transition-all duration-300",
                   active
                     ? "border-transparent bg-terracotta text-primary-foreground shadow-[var(--shadow-glow)]"
                     : "border-border bg-background/50 text-foreground hover:border-primary/50",
                 )}
               >
-                <span className="block text-sm font-semibold">
+                <span className="block text-md font-semibold">
                   {offer.name}
                 </span>
-                <span className="italic block text-xs opacity-80">
+                <span className="font-serif italic block text-xs opacity-80">
                   {offer.description}
                 </span>
-                {/* <span
+                <p
                   className={cn(
-                    "block text-xs",
+                    "text-bottom block text-xs border-t border-hairline",
                     active
                       ? "text-primary-foreground/80"
                       : "text-muted-foreground",
                   )}
                 >
-                  {offer.price}€
-                </span> */}
+                  {offer.id === "premium" ? (
+                    <span
+                      className={` ${!active ? "text-terracotta" : ""} font-serif  text-sm font-semibold`}
+                    >
+                      Sur mesure
+                    </span>
+                  ) : (
+                    <>
+                      à partir de{" "}
+                      <span
+                        className={` ${!active ? "text-terracotta" : ""} font-serif text-sm font-semibold`}
+                      >
+                        {offer.price}€
+                      </span>
+                    </>
+                  )}
+                </p>
               </button>
             );
           })}
@@ -300,7 +348,7 @@ export function ContactForm() {
             {formatEuro(quote.total)}
           </span>
         </div>
-        <div className="mt-3 pt-3 border-t border-border text-sm text-muted-foreground">
+        <div className="italic font-serif mt-3 pt-3 border-t border-border text-sm text-muted-foreground">
           Estimation indicative, devis final après échange.
         </div>
       </div>
@@ -333,12 +381,27 @@ export function ContactForm() {
           <>
             <Loader2 className="h-4 w-4 animate-spin" /> Envoi en cours...
           </>
+        ) : status === "error" ? (
+          <span>
+            Erreur lors de l&apos;envoi, envoyez moi un mail directement !
+          </span>
         ) : (
           <>
             Envoyer ma demande <Send className="h-4 w-4" />
           </>
         )}
       </Button>
+      {status === "error" && (
+        <p className="mt-4 text-center text-sm">
+          Mon mail :{" "}
+          <a
+            href="mailto:contact@atelier-douglas.com"
+            className="text-primary underline"
+          >
+            contact@atelier-douglas.com
+          </a>
+        </p>
+      )}
       <p className="mt-4 text-center text-xs text-muted-foreground">
         Vos infos restent chez nous. Pas de spam, jamais.
       </p>

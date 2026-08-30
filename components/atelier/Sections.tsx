@@ -36,7 +36,7 @@ export function Services() {
     <section id="services" className="grain border-b border-hairline">
       <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 md:py-32">
         <div className="flex items-baseline justify-between border-b border-hairline pb-6">
-          <h2 className="display text-[clamp(2rem,5vw,3.75rem)] text-espresso">
+          <h2 className="display text-[clamp(3.6rem,9vw,7.5rem)] text-espresso">
             Ce qu&apos;on fabrique
           </h2>
           <span className="label hidden text-walnut/70 sm:block">Services</span>
@@ -119,7 +119,7 @@ export function Work() {
     >
       <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 md:py-32">
         <div className="flex items-baseline justify-between border-b border-hairline pb-6">
-          <h2 className="display text-[clamp(2rem,5vw,3.75rem)] text-espresso">
+          <h2 className="display text-[clamp(3.6rem,9vw,7.5rem)] text-espresso">
             Quelques pièces
           </h2>
           <span className="label hidden text-walnut/70 sm:block">
@@ -176,7 +176,7 @@ export function Work() {
                   <span className="label text-terracotta">0{i + 1}</span>
                   <span className="label text-walnut/70">{p.year}</span>
                 </div>
-                <h3 className="display mt-5 text-[clamp(1.8rem,4vw,2.7rem)] text-espresso">
+                <h3 className="display mt-5 text-[clamp(2.2rem,4vw,2.7rem)] text-espresso">
                   {p.name}
                 </h3>
                 <p className="label mt-3 text-walnut/80">{p.category}</p>
@@ -386,7 +386,7 @@ const process = [
 export function Process() {
   return (
     <section className="grain border-b border-hairline">
-      <div className="mx-auto max-w-7xl px-5 py-24 sm:px-6 md:py-32">
+      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:py-32">
         <span className="label text-walnut/70">Méthode</span>
         <ol className="mt-10">
           {process.map((p) => (
@@ -457,7 +457,7 @@ export function About() {
           <span className="label text-walnut/70">
             L&apos;humain derrière l&apos;atelier
           </span>
-          <h2 className="display mt-6 text-[clamp(2.2rem,5vw,3.9rem)] text-espresso">
+          <h2 className="display mt-6 text-[clamp(3.6rem,9vw,7.5rem)] text-espresso">
             Un développeur,
             <br />
             pas une agence.
@@ -503,14 +503,14 @@ export function About() {
 export function FinalCta() {
   return (
     <section id="contact" className="grain bg-terracotta">
-      <div className=" grid grid-cols-12 mx-auto max-w-7xl px-2 py-12 sm:px-6 md:py-15">
+      <div className=" grid grid-cols-12 mx-auto max-w-7xl px-2 py-16 sm:px-6 md:py-25">
         <div className="col-span-12 md:col-span-5 px-3 sm:px-5">
-          <h2 className="display text-[clamp(2.6rem,9vw,7.5rem)] text-ink">
+          <h2 className="display text-[clamp(3.6rem,9vw,7.5rem)] text-ink">
             On fabrique
             <br />
             quoi pour vous ?
           </h2>
-          <p className="mb-12 sm:mb-16 mt-8 max-w-lg text-[1.0625rem] leading-relaxed text-ink/80">
+          <p className="mb-12 sm:mb-16 mt-8 max-w-lg sm:text-[1.0625rem] text-[0.9rem] leading-relaxed text-ink/80">
             Un nouveau site, une refonte ou simplement l&apos;envie de faire
             mieux ?<br />
             Envoyez-moi un message par mail ou sur notre formulaire de contact
