@@ -140,7 +140,7 @@ export function Work() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Voir le projet ${p.name}`}
-                className={`cursor-pointer group relative overflow-hidden rounded-t-2xl rounded-b-lg border border-hairline bg-paper md:col-span-8 ${
+                className={`max-w-[703px] cursor-pointer group relative overflow-hidden rounded-t-2xl rounded-b-lg border border-hairline bg-paper md:col-span-8 ${
                   i % 2 === 1 ? "md:col-start-5" : ""
                 }`}
               >
@@ -165,6 +165,7 @@ export function Work() {
                     loading="lazy"
                     width={1280}
                     height={960}
+                    // add maximum width for the image 703px
                     className="w-full transition-transform duration-[900ms] ease-out group-hover:scale-[1.02]"
                   />
                 </div>
