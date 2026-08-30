@@ -9,6 +9,8 @@ import {
 import localFont from "next/font/local";
 import "./globals.css";
 
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -54,6 +56,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${barlow.variable} ${bebasNeue.variable} ${geistSans.variable} ${geistMono.variable} ${fraunces.variable} ${aeternus.variable} h-full antialiased`}
     >
+      <GoogleAnalytics gaId="G-8WSBVE4201" />
+
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
