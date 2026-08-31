@@ -43,7 +43,7 @@ export async function POST(request: Request) {
     const resend = new Resend(apiKey);
 
     const { error } = await resend.emails.send({
-      from: "formulaire@resend.dev",
+      from: "contact@atelierdouglas.fr",
       to: "atelierdouglas.web@gmail.com",
       subject: `Nouveau message de ${name}`,
       html: `
