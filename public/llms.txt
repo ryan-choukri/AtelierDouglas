@@ -1,0 +1,23 @@
+# Atelier Douglas
+
+> Atelier Douglas est un studio web indépendant français spécialisé dans la création et la refonte de sites web modernes, rapides et sur mesure pour les entreprises.
+
+Atelier Douglas accompagne notamment les PME, indépendants, campings et entreprises qui souhaitent améliorer leur image, leur visibilité en ligne et leur conversion.
+
+## Pages principales
+
+- [Accueil](https://atelierdouglas.fr/): Présentation générale du studio et de ses services.
+- [Services](https://atelierdouglas.fr/services): Création de sites vitrines, refonte, responsive, performance et référencement local.
+- [Réalisations](https://atelierdouglas.fr/realisations): Sélection de projets et réalisations web.
+- [À propos](https://atelierdouglas.fr/a-propos): Présentation d'Atelier Douglas et de son approche.
+- [Contact](https://atelierdouglas.fr/contact): Informations pour prendre contact et discuter d'un projet.
+
+## Pages spécialisées
+
+- [Sites web pour campings](https://atelierdouglas.fr/camping): Exemple et offre de création de sites web pour campings.
+
+## Informations utiles
+
+- Site officiel : https://atelierdouglas.fr
+- Activité : création et refonte de sites web
+- Zone : France
