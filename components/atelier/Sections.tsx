@@ -274,7 +274,10 @@ const benefits = [
 
 export function Philosophy() {
   return (
-    <section className="grain custom-bg-terracotta border-b border-hairline">
+    <section
+      id="services"
+      className="grain custom-bg-terracotta border-b border-hairline"
+    >
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 md:py-16 mb-10">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
