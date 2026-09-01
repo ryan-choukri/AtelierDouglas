@@ -63,7 +63,7 @@ export function Navbar() {
                 text-[0.83rem]
                 font-medium
                 text-walnut
-
+                font-mono
                 transition-colors
                 duration-300
 
@@ -136,7 +136,7 @@ export function Navbar() {
               sm:px-4
             "
           >
-            <span className="hidden font-bold sm:inline">
+            <span className="hidden font-mono sm:inline">
               Parler de mon projet
             </span>
 
