@@ -1,5 +1,7 @@
-import { useState, type FormEvent } from "react";
-import { Check, Loader2, Send, Tag } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { Check, Loader2, Send } from "lucide-react";
 import { Button, Field, inputClass } from "./primitives";
 
 import { cn } from "@/lib/utils";
@@ -110,7 +112,7 @@ export function ContactForm() {
     }
   }
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     console.log("Form data:", Object.fromEntries(data.entries()));

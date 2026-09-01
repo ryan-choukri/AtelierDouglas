@@ -1,16 +1,28 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-const links = [
-  { label: "Réalisations", href: "#realisations" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
-];
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Sur la home, utilise les ancres; sur les autres pages, utilise les vraies routes
+  const links =
+    pathname === "/"
+      ? [
+          { label: "Réalisations", href: "#realisations" },
+          { label: "Services", href: "#services" },
+          { label: "À propos", href: "#about" },
+          { label: "Contact", href: "#contact" },
+        ]
+      : [
+          { label: "Services", href: "/services" },
+          { label: "Réalisations", href: "/realisations" },
+          { label: "À propos", href: "/a-propos" },
+          { label: "Contact", href: "/contact" },
+        ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -31,7 +43,7 @@ export function Navbar() {
       >
         {/* Logo */}
         <a
-          href="#top"
+          href={pathname === "/" ? "#top" : "/"}
           className="pt-[5px] pl-1 display text-[1.8rem] shrink-0 text-espresso transition-opacity"
         >
           <span className="hidden sm:inline">Atelier Douglas</span>
@@ -106,7 +118,7 @@ export function Navbar() {
         {/* CTA + mobile menu */}
         <div className="relative left-[8px] ml-auto flex items-center gap-2 md:ml-0">
           <a
-            href="#contact"
+            href={pathname === "/" ? "#contact" : "/contact"}
             className="
               group
               inline-flex items-center gap-1.5

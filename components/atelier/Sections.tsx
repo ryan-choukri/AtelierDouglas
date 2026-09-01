@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import nordalIndustrie from "@/assets/work-nordal-industrie.png";
 import barberProject from "@/assets/work-barber-project.png";
 import metalforge from "@/assets/metalforge.png";
@@ -8,6 +9,7 @@ import ryandevImg from "@/assets/ryandev.jpg";
 
 import { ContactForm } from "@/components/atelier/ContactForm";
 import { VisibilityConversion } from "@/components/atelier/VisibilityConversion";
+import Link from "next/link";
 
 export function Statement() {
   return <VisibilityConversion />;
@@ -420,11 +422,11 @@ const aboutStats = [
 ];
 
 export function About() {
+  const pathname = usePathname();
+  const contactHref = pathname === "/" ? "#contact" : "/contact";
+
   return (
-    <section
-      id="fondateur"
-      className="darker-part grain border-b border-hairline"
-    >
+    <section id="about" className="darker-part grain border-b border-hairline">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-5 py-24 sm:px-6 md:grid-cols-12 md:py-32">
         <div className="md:col-span-5">
           <div className="relative mx-auto max-w-xs md:max-w-none">
@@ -490,7 +492,7 @@ export function About() {
           </div>
 
           <a
-            href="#contact"
+            href={contactHref}
             className="group mt-12 inline-flex items-center gap-2 border-b border-espresso/30 pb-1 text-sm font-medium text-espresso transition-colors hover:border-terracotta hover:text-terracotta"
           >
             Discutons de votre projet
@@ -538,11 +540,38 @@ export function FinalCta() {
 }
 
 export function Footer() {
+  const pathname = usePathname();
+
+  const getNavLink = (label: string) => {
+    if (pathname === "/") {
+      // Sur la home, utilise les ancres
+      return `#${label.toLowerCase().replace("é", "e")}`;
+    }
+    // Sur les autres pages, utilise les routes
+    switch (label) {
+      case "Réalisations":
+        return "/realisations";
+      case "Services":
+        return "/services";
+      case "Atelier":
+        return "/a-propos";
+      case "Contact":
+        return "/contact";
+      default:
+        return "/";
+    }
+  };
+
   return (
     <footer className="grain bg-paper">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 py-16 sm:px-6 md:grid-cols-12">
         <div className="md:col-span-5">
-          <p className="label text-espresso">Atelier Douglas</p>
+          <Link
+            href="/"
+            className="label text-espresso hover:text-terracotta transition-colors"
+          >
+            Atelier Douglas
+          </Link>
           <p className="mt-3 text-sm text-espresso/60">
             Design &amp; développement web.
           </p>
@@ -552,7 +581,7 @@ export function Footer() {
             {["Réalisations", "Services", "Atelier", "Contact"].map((l) => (
               <li key={l}>
                 <a
-                  href={`#${l.toLowerCase().replace("é", "e")}`}
+                  href={getNavLink(l)}
                   className="transition-colors hover:text-terracotta"
                 >
                   {l}

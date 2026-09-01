@@ -15,9 +15,9 @@ import {
   Footer,
 } from "@/components/atelier/Sections";
 
-const title = "Création & refonte de sites web | Atelier Douglas";
+const title = "Atelier Douglas | Création de sites web modernes";
 const description =
-  "Atelier Douglas crée et modernise les sites web d'entreprises : design sur mesure, performance, mobile et référencement local.";
+  "Atelier Douglas crée des sites web modernes, rapides et sur mesure pour les entreprises qui veulent améliorer leur image, leur visibilité et leur conversion.";
 export const metadata: Metadata = {
   title,
   description,
