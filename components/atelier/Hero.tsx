@@ -8,7 +8,7 @@ import { SplitTitle } from "@/components/atelier/SplitTitle";
 const CardInsideDesign = ({ tilt }: { tilt: { x: number; y: number } }) => {
   return (
     <div className="flex h-full min-h-0 flex-col pt-2 md:pt-4">
-      <span className="mb-1 text-center font-mono text-[9px] font-medium uppercase tracking-[0.18em] text-walnut md:mb-5 md:text-[10px]">
+      <span className="mb-1 text-center font-mono text-[7px] font-medium uppercase tracking-[0.18em] text-walnut md:mb-5 md:text-[9px]">
         Votre Design
       </span>
 
@@ -56,7 +56,7 @@ const CardInsideDesign = ({ tilt }: { tilt: { x: number; y: number } }) => {
 const CardInsideMobile = ({ tilt }: { tilt: { x: number; y: number } }) => {
   return (
     <div className="flex h-full min-h-0 flex-col pt-2 md:pt-4">
-      <span className="mb-1 text-center font-mono text-[9px] font-medium uppercase tracking-[0.18em] text-walnut md:text-[10px]">
+      <span className="mb-1 text-center font-mono text-[7px] font-medium uppercase tracking-[0.18em] text-walnut md:text-[9px]">
         Pensé pour mobile
       </span>
 
@@ -90,7 +90,7 @@ const CardInsideMobile = ({ tilt }: { tilt: { x: number; y: number } }) => {
 const CardInsideStats = ({ tilt }: { tilt: { x: number; y: number } }) => {
   return (
     <div className="relative flex h-full min-h-0 flex-col overflow-hidden pt-2 md:pt-4">
-      <span className="mb-1 text-center font-mono text-[9px] font-medium uppercase tracking-[0.18em] text-walnut md:mb-5 md:text-[10px]">
+      <span className="mb-1 text-center font-mono text-[7px] font-medium uppercase tracking-[0.18em] text-walnut md:mb-5 md:text-[9px]">
         Vos Résultat
       </span>
 
@@ -133,6 +133,16 @@ export function Hero() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    const supportsPointerParallax = window.matchMedia(
+      "(hover: hover) and (pointer: fine)",
+    ).matches;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (!supportsPointerParallax || prefersReducedMotion) return;
+
     const onMove = (e: PointerEvent) => {
       const r = el.getBoundingClientRect();
       setTilt({
@@ -140,8 +150,15 @@ export function Hero() {
         y: (e.clientY - r.top - r.height / 2) / r.height,
       });
     };
+    const onLeave = () => setTilt({ x: 0, y: 0 });
+
     el.addEventListener("pointermove", onMove);
-    return () => el.removeEventListener("pointermove", onMove);
+    el.addEventListener("pointerleave", onLeave);
+
+    return () => {
+      el.removeEventListener("pointermove", onMove);
+      el.removeEventListener("pointerleave", onLeave);
+    };
   }, []);
 
   return (
@@ -150,7 +167,15 @@ export function Hero() {
       id="top"
       className="grain relative min-h-[96svh] overflow-hidden border-b border-hairline pt-28 sm:pt-32"
     >
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-5 pb-20 sm:px-6 lg:grid-cols-12 lg:gap-8">
+      <div
+        className="atelier-hero-depth"
+        aria-hidden="true"
+        style={{
+          transform: `translate3d(${tilt.x * -16}px, ${tilt.y * -12}px, 0) scale(1.035)`,
+        }}
+      />
+
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-14 px-5 pb-20 sm:px-6 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-6 lg:pt-10">
           <p
             className="label rise text-walnut"
@@ -344,7 +369,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="mx-auto flex max-w-7xl items-center justify-between border-t border-hairline px-5 py-4 sm:px-6">
+      <div className="relative z-10 mx-auto flex max-w-7xl items-center justify-between border-t border-hairline px-5 py-4 sm:px-6">
         <span className="label text-walnut/70">Défiler</span>
         <span className="label text-walnut/70">01 — Atelier Douglas</span>
       </div>
