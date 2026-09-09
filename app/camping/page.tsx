@@ -27,6 +27,7 @@ import { Navbar } from "@/components/camping/Navbar";
 import { Reveal } from "@/components/camping/Reveal";
 import { NatureTexture } from "@/components/camping/NatureTexture";
 import { BackgroundDecor } from "@/components/camping/BackgroundDecor";
+import { ProspectCTA } from "@/components/atelier/ProspectCTA";
 import { BOOKING_URL, CAMPING } from "@/lib/camping";
 
 import heroImg from "@/assets/hero-camping.jpg";
@@ -884,6 +885,10 @@ function Page() {
       </main>
 
       <Footer />
+      <ProspectCTA
+        pageName="camping"
+        pageUrl="https://atelierdouglas.fr/camping"
+      />
     </div>
   );
 }

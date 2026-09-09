@@ -10,6 +10,7 @@ import { CarnetHero } from "./CarnetHero";
 import { GardenJourney } from "./GardenJourney";
 import { MaterialBoard } from "./MaterialBoard";
 import { ProjectsEditorial } from "./ProjectsEditorial";
+import { ProspectCTA } from "@/components/atelier/ProspectCTA";
 
 export function CarnetPage() {
   const rootRef = useRef<HTMLElement>(null);
@@ -18,11 +19,16 @@ export function CarnetPage() {
     const root = rootRef.current;
     if (!root) return;
 
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const revealTargets = root.querySelectorAll<HTMLElement>("[data-cp-reveal]");
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    const revealTargets =
+      root.querySelectorAll<HTMLElement>("[data-cp-reveal]");
 
     if (reducedMotion) {
-      revealTargets.forEach((target) => target.setAttribute("data-visible", "true"));
+      revealTargets.forEach((target) =>
+        target.setAttribute("data-visible", "true"),
+      );
       return;
     }
 
@@ -65,14 +71,20 @@ export function CarnetPage() {
   }, []);
 
   return (
-    <main className={styles.site} ref={rootRef}>
-      <CarnetHero />
-      <BeforeAfterEditorial />
-      <GardenJourney />
-      <ProjectsEditorial />
-      <MaterialBoard />
-      <CarnetCTA />
-      <CarnetFooter />
-    </main>
+    <>
+      <main className={styles.site} ref={rootRef}>
+        <CarnetHero />
+        <BeforeAfterEditorial />
+        <GardenJourney />
+        <ProjectsEditorial />
+        <MaterialBoard />
+        <CarnetCTA />
+        <CarnetFooter />
+      </main>
+      <ProspectCTA
+        pageName="carnet-paysage"
+        pageUrl="https://atelierdouglas.fr/carnet-paysage"
+      />
+    </>
   );
 }

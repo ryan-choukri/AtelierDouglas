@@ -167,3 +167,6 @@ export function Field({
 
 export const inputClass =
   "w-full rounded-xl border border-border bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 transition-all duration-200 focus:border-primary/70 focus:bg-background focus:outline-none focus:ring-2 focus:ring-primary/25";
+
+export const inputClassCta =
+  "w-full rounded-xl border border-border bg-espresso px-4 py-3 text-sm text-paper placeholder:text-paper/70 transition-all duration-200 focus:text-paper/40 focus:border-primary/70 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/25";

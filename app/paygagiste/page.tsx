@@ -13,6 +13,7 @@ import {
 
 import { BeforeAfter } from "./BeforeAfter";
 import { ProjectForm } from "./ProjectForm";
+import { ProspectCTA } from "@/components/atelier/ProspectCTA";
 import styles from "./paygagiste.module.css";
 
 export const metadata: Metadata = {
@@ -139,7 +140,11 @@ export default function PaysagistePage() {
   return (
     <div className={styles.site}>
       <header className={styles.navbar}>
-        <a className={styles.brand} href="#accueil" aria-label="Carnet Paysage, accueil">
+        <a
+          className={styles.brand}
+          href="#accueil"
+          aria-label="Carnet Paysage, accueil"
+        >
           <span className={styles.brandMark} aria-hidden="true">
             <Sprout size={18} strokeWidth={1.6} />
           </span>
@@ -185,8 +190,8 @@ export default function PaysagistePage() {
             <p className={styles.eyebrow}>Paysagiste à Angers & alentours</p>
             <h1>Des extérieurs pensés pour être vécus.</h1>
             <p className={styles.heroIntro}>
-              Nous dessinons et réalisons des jardins simples à vivre, durables et
-              profondément liés à votre maison.
+              Nous dessinons et réalisons des jardins simples à vivre, durables
+              et profondément liés à votre maison.
             </p>
             <div className={styles.heroActions}>
               <a className={styles.primaryButton} href="#contact">
@@ -206,17 +211,29 @@ export default function PaysagistePage() {
         </section>
 
         <section className={styles.reassurance} aria-label="Nos engagements">
-          <p><span>01</span>Un interlocuteur unique</p>
-          <p><span>02</span>De la conception au chantier</p>
-          <p><span>03</span>Entreprise locale</p>
-          <p><span>04</span>Devis clair et détaillé</p>
+          <p>
+            <span>01</span>Un interlocuteur unique
+          </p>
+          <p>
+            <span>02</span>De la conception au chantier
+          </p>
+          <p>
+            <span>03</span>Entreprise locale
+          </p>
+          <p>
+            <span>04</span>Devis clair et détaillé
+          </p>
         </section>
 
         <section className={styles.transformation} id="transformation">
           <div className={styles.transformationIntro}>
             <div>
               <p className={styles.sectionIndex}>01 — Transformer</p>
-              <h2>Le même jardin.<br />Une nouvelle façon d’y vivre.</h2>
+              <h2>
+                Le même jardin.
+                <br />
+                Une nouvelle façon d’y vivre.
+              </h2>
             </div>
             <p>
               Une transformation complète à Beaucouzé : retrouver de l’intimité,
@@ -234,27 +251,50 @@ export default function PaysagistePage() {
               </div>
 
               <dl className={styles.caseMetrics}>
-                <div><Ruler size={17} aria-hidden="true" /><dt>Surface</dt><dd>260 m²</dd></div>
-                <div><CalendarDays size={17} aria-hidden="true" /><dt>Durée</dt><dd>5 semaines</dd></div>
-                <div><MapPin size={17} aria-hidden="true" /><dt>Lieu</dt><dd>Beaucouzé</dd></div>
+                <div>
+                  <Ruler size={17} aria-hidden="true" />
+                  <dt>Surface</dt>
+                  <dd>260 m²</dd>
+                </div>
+                <div>
+                  <CalendarDays size={17} aria-hidden="true" />
+                  <dt>Durée</dt>
+                  <dd>5 semaines</dd>
+                </div>
+                <div>
+                  <MapPin size={17} aria-hidden="true" />
+                  <dt>Lieu</dt>
+                  <dd>Beaucouzé</dd>
+                </div>
               </dl>
 
               <div className={styles.caseNotes}>
                 <div>
                   <span>Le besoin</span>
-                  <p>Une terrasse réellement utilisable et un jardin moins exposé au voisinage.</p>
+                  <p>
+                    Une terrasse réellement utilisable et un jardin moins exposé
+                    au voisinage.
+                  </p>
                 </div>
                 <div>
                   <span>La contrainte</span>
-                  <p>Un terrain étroit, un sol lourd et des niveaux à rattraper depuis la maison.</p>
+                  <p>
+                    Un terrain étroit, un sol lourd et des niveaux à rattraper
+                    depuis la maison.
+                  </p>
                 </div>
                 <div>
                   <span>Notre réponse</span>
-                  <p>Une terrasse en chêne, une circulation perméable et des plantations en strates.</p>
+                  <p>
+                    Une terrasse en chêne, une circulation perméable et des
+                    plantations en strates.
+                  </p>
                 </div>
               </div>
 
-              <p className={styles.caseWorks}>Terrasse · terrassement · plantations · éclairage · clôture</p>
+              <p className={styles.caseWorks}>
+                Terrasse · terrassement · plantations · éclairage · clôture
+              </p>
             </aside>
           </div>
         </section>
@@ -268,7 +308,9 @@ export default function PaysagistePage() {
               height={1024}
               sizes="(max-width: 800px) 100vw, 48vw"
             />
-            <figcaption><span>Détail chantier 023</span>Bordure acier · nivellement manuel</figcaption>
+            <figcaption>
+              <span>Détail chantier 023</span>Bordure acier · nivellement manuel
+            </figcaption>
           </figure>
 
           <div className={styles.philosophyCopy}>
@@ -279,19 +321,25 @@ export default function PaysagistePage() {
               souhaitez y consacrer.
             </p>
             <p>
-              Carnet Paysage imagine des extérieurs qui vieillissent bien. Nous partons
-              de ce qui existe — la maison, un arbre, une vue, un usage — puis nous
-              dessinons avec des matériaux sobres et des végétaux adaptés à notre région.
+              Carnet Paysage imagine des extérieurs qui vieillissent bien. Nous
+              partons de ce qui existe — la maison, un arbre, une vue, un usage
+              — puis nous dessinons avec des matériaux sobres et des végétaux
+              adaptés à notre région.
             </p>
             <blockquote>
-              « Nous préférons un jardin vivant et bien construit à un décor figé dès le
-              premier jour. »
-              <cite>— L’équipe Carnet Paysage</cite>
+              « Nous préférons un jardin vivant et bien construit à un décor
+              figé dès le premier jour. »<cite>— L’équipe Carnet Paysage</cite>
             </blockquote>
             <div className={styles.approachPoints}>
-              <p><span>01</span>Observer avant de dessiner</p>
-              <p><span>02</span>Faire simple, mais précis</p>
-              <p><span>03</span>Penser l’entretien dès le plan</p>
+              <p>
+                <span>01</span>Observer avant de dessiner
+              </p>
+              <p>
+                <span>02</span>Faire simple, mais précis
+              </p>
+              <p>
+                <span>03</span>Penser l’entretien dès le plan
+              </p>
             </div>
           </div>
         </section>
@@ -303,8 +351,8 @@ export default function PaysagistePage() {
               <h2>Du premier trait au dernier végétal.</h2>
             </div>
             <p>
-              Une seule équipe pour garder le fil du projet, coordonner les détails et
-              livrer un extérieur cohérent.
+              Une seule équipe pour garder le fil du projet, coordonner les
+              détails et livrer un extérieur cohérent.
             </p>
           </div>
 
@@ -330,15 +378,18 @@ export default function PaysagistePage() {
             <p className={styles.sectionIndex}>04 — Matières</p>
             <h2>Des matériaux qui se patinent, pas qui se démodent.</h2>
             <p>
-              Nous privilégions les filières proches, les surfaces perméables et les
-              matières capables de traverser les saisons.
+              Nous privilégions les filières proches, les surfaces perméables et
+              les matières capables de traverser les saisons.
             </p>
           </div>
 
           <div className={styles.materialGrid}>
             {MATERIALS.map((material) => (
               <article key={material.number}>
-                <div className={`${styles.materialSample} ${material.className}`} aria-hidden="true" />
+                <div
+                  className={`${styles.materialSample} ${material.className}`}
+                  aria-hidden="true"
+                />
                 <span>{material.number}</span>
                 <h3>{material.title}</h3>
                 <p className={styles.materialOrigin}>{material.origin}</p>
@@ -354,7 +405,10 @@ export default function PaysagistePage() {
               <p className={styles.sectionIndex}>05 — Réalisations</p>
               <h2>Quelques jardins récemment sortis du carnet.</h2>
             </div>
-            <a href="#contact">Vous avez un terrain en tête ?<ArrowUpRight size={18} aria-hidden="true" /></a>
+            <a href="#contact">
+              Vous avez un terrain en tête ?
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
           </div>
 
           <div className={styles.projectGrid}>
@@ -371,8 +425,15 @@ export default function PaysagistePage() {
                   <span className={styles.projectNumber}>{project.number}</span>
                 </div>
                 <div className={styles.projectCaption}>
-                  <div><p>{project.place}</p><h3>{project.title}</h3></div>
-                  <ArrowUpRight size={21} strokeWidth={1.4} aria-hidden="true" />
+                  <div>
+                    <p>{project.place}</p>
+                    <h3>{project.title}</h3>
+                  </div>
+                  <ArrowUpRight
+                    size={21}
+                    strokeWidth={1.4}
+                    aria-hidden="true"
+                  />
                 </div>
               </article>
             ))}
@@ -383,14 +444,20 @@ export default function PaysagistePage() {
           <div className={styles.processHeader}>
             <p className={styles.sectionIndex}>06 — Le projet</p>
             <h2>Avancer avec une vision claire.</h2>
-            <p>Vous savez où l’on va, ce que l’on fait et combien cela coûte à chaque étape.</p>
+            <p>
+              Vous savez où l’on va, ce que l’on fait et combien cela coûte à
+              chaque étape.
+            </p>
           </div>
 
           <div className={styles.processList}>
             {PROCESS.map((step) => (
               <article key={step.number}>
                 <span>{step.number}</span>
-                <div><h3>{step.title}</h3><p>{step.text}</p></div>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </div>
                 <small>{step.meta}</small>
               </article>
             ))}
@@ -403,12 +470,19 @@ export default function PaysagistePage() {
             <h2>Et si votre jardin commençait ici&nbsp;?</h2>
             <p>
               Quelques lignes suffisent pour démarrer. Nous vous rappelons pour
-              comprendre le lieu, vos envies et vérifier que nous sommes la bonne équipe.
+              comprendre le lieu, vos envies et vérifier que nous sommes la
+              bonne équipe.
             </p>
 
             <div className={styles.contactFacts}>
-              <p><MapPin size={19} strokeWidth={1.5} aria-hidden="true" />Angers et jusqu’à 35 km autour</p>
-              <p><Clock3 size={19} strokeWidth={1.5} aria-hidden="true" />Réponse sous 48 h ouvrées</p>
+              <p>
+                <MapPin size={19} strokeWidth={1.5} aria-hidden="true" />
+                Angers et jusqu’à 35 km autour
+              </p>
+              <p>
+                <Clock3 size={19} strokeWidth={1.5} aria-hidden="true" />
+                Réponse sous 48 h ouvrées
+              </p>
             </div>
           </div>
 
@@ -419,8 +493,13 @@ export default function PaysagistePage() {
       <footer className={styles.footer}>
         <div className={styles.footerBrand}>
           <a className={styles.brand} href="#accueil">
-            <span className={styles.brandMark} aria-hidden="true"><Sprout size={18} strokeWidth={1.6} /></span>
-            <span><strong>Carnet</strong><strong>Paysage</strong></span>
+            <span className={styles.brandMark} aria-hidden="true">
+              <Sprout size={18} strokeWidth={1.6} />
+            </span>
+            <span>
+              <strong>Carnet</strong>
+              <strong>Paysage</strong>
+            </span>
           </a>
           <p>Paysagiste concepteur & réalisateur à Angers.</p>
         </div>
@@ -444,6 +523,10 @@ export default function PaysagistePage() {
           <a href="#accueil">Retour en haut ↑</a>
         </div>
       </footer>
+      <ProspectCTA
+        pageName="paygagiste"
+        pageUrl="https://atelierdouglas.fr/paygagiste"
+      />
     </div>
   );
 }

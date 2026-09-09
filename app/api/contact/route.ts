@@ -8,13 +8,14 @@ type ContactRequestBody = {
   activity?: string;
   phone?: string;
   offer?: string;
+  leadId?: string;
 };
 
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as ContactRequestBody;
     console.log("Contact request body:", body);
-    const { name, email, message, activity, phone, offer } = body;
+    const { name, email, message, activity, phone, offer, leadId } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -45,7 +46,7 @@ export async function POST(request: Request) {
     const { error } = await resend.emails.send({
       from: "contact@atelierdouglas.fr",
       to: "atelierdouglas.web@gmail.com",
-      subject: `Nouveau message de ${name}`,
+      subject: `Nouveau message de ${name}${leadId ? ` (leadId: ${leadId})` : ""}`,
       html: `
         <div style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.6; color: #222;">
             <h2 style="margin: 0 0 20px; font-size: 20px;">
@@ -62,13 +63,18 @@ export async function POST(request: Request) {
         <p style="margin: 0 0 6px;"><strong>Email :</strong> <a href="mailto:${email}">${email}</a></p>
         <p style="margin: 0 0 6px;"><strong>Téléphone :</strong> ${phone || "Non renseigné"}</p>
         <p style="margin: 0 0 6px;"><strong>Activité :</strong> ${activity || "Non renseignée"}</p>
-        <p style="margin: 0;"><strong>Offre :</strong> ${offer || "Non renseignée"}</p>
+        <p style="margin: 0 0 6px;"><strong>Offre :</strong> ${offer || "Non renseignée"}</p>
+        ${leadId ? `<p style="margin: 0;"><strong>Lead ID :</strong> ${leadId}</p>` : ""}
         </div>
             <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;" />
 
             <p style="margin-bottom: 6px;"><strong>Son Message :</strong></p>
             <p style="margin-top: 0;">
             ${message.replace(/\n/g, "<br />")}
+            </p>
+            
+            <p style="margin-top: 20px; font-size: 12px; color: #666;">
+            Timestamp: ${new Date().toLocaleString("fr-FR")}
             </p>
         </div>
         `,

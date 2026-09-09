@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Nav } from "@/components/nordal/Nav";
 import { Reveal } from "@/components/nordal/Reveal";
 import { TechnicalDrawing } from "@/components/nordal/TechnicalDrawing";
+import { ProspectCTA } from "@/components/atelier/ProspectCTA";
 import { Metadata } from "next";
 import "./style.css";
 
@@ -617,6 +618,10 @@ export default function Index() {
           </div>
         </div>
       </footer>
+      <ProspectCTA
+        pageName="industrial"
+        pageUrl="https://atelierdouglas.fr/industrial"
+      />
     </div>
   );
 }

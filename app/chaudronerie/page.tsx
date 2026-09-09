@@ -17,6 +17,7 @@ import Navbar from "@/components/chaudronerie/Navbar";
 import SurfaceBlueprint from "@/components/chaudronerie/SurfaceBlueprint";
 import { SECTEURS } from "@/components/chaudronerie/data";
 import Footer from "@/components/chaudronerie/Footer";
+import { ProspectCTA } from "@/components/atelier/ProspectCTA";
 import heroWelder from "@/assets/hero-welder.jpg";
 import atelier from "@/assets/atelier2.jpg";
 import realStructures from "@/assets/real-structures.jpg";
@@ -535,6 +536,10 @@ function Index() {
       </main>
 
       <Footer />
+      <ProspectCTA
+        pageName="chaudronerie"
+        pageUrl="https://atelierdouglas.fr/chaudronerie"
+      />
     </div>
   );
 }
