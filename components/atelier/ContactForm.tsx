@@ -21,21 +21,21 @@ export const OFFERS: Offer[] = [
     name: "Essentiel",
     description:
       "Un site vitrine complet avec toutes les fonctionnalités essentielles pour présenter votre activité.",
-    price: 490,
+    price: 299,
   },
   {
     id: "pro",
     name: "Pro",
     description:
       "Un site professionnel avec des fonctionnalités avancées pour booster votre activité.",
-    price: 690,
+    price: 499,
   },
   {
     id: "premium",
     name: "Sur mesure",
     description:
       "Un projet sur mesure pour répondre à vos besoins spécifiques et complexes.",
-    price: 1280,
+    price: 799,
   },
 ];
 
@@ -347,7 +347,9 @@ export function ContactForm() {
         <div className=" flex items-center justify-between gap-4">
           <span className="text-sm font-semibold">Total estimé</span>
           <span className="font-serif text-2xl text-primary">
-            {formatEuro(quote.total)}
+            {quote.offer.id === "premium"
+              ? "Sur devis"
+              : formatEuro(quote.total)}
           </span>
         </div>
         <div className="italic font-serif mt-3 pt-3 border-t border-border text-sm text-muted-foreground">
