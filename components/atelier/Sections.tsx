@@ -6,7 +6,7 @@ import barberProject from "@/assets/work-barber-project.png";
 import metalforge from "@/assets/metalforge.png";
 import heroCamping from "@/assets/camping.png";
 import ryandevImg from "@/assets/ryandev.jpg";
-
+import paygagiste from "@/assets/paygagiste.png";
 import { ContactForm } from "@/components/atelier/ContactForm";
 import { VisibilityConversion } from "@/components/atelier/VisibilityConversion";
 import Link from "next/link";
@@ -75,6 +75,15 @@ export function Services() {
 
 const projects = [
   {
+    name: "carnet paysage",
+    category: "Paysagiste",
+    text: "Une vitrine immersive pensée pour valoriser le savoir-faire du paysagiste, ses projets et son approche, à travers une direction artistique élégante et naturelle.",
+    img: paygagiste,
+    year: "2026",
+    url: "/carnet-paysage",
+  },
+
+  {
     name: "METALFORGE",
     category: "Chaudronnerie et mécano-soudure",
     text: "Refonte complète du site web d'une entreprise de chaudronnerie industrielle, avec un design moderne et une navigation optimisée.",
@@ -82,6 +91,7 @@ const projects = [
     year: "2026",
     url: "/chaudronerie",
   },
+
   {
     name: "Camping Les Grands Chênes",
     category: "Camping & Hébergement",
@@ -129,7 +139,7 @@ export function Work() {
           </span>
         </div>
 
-        <div className="mt-14 space-y-24 md:space-y-36">
+        <div className="mt-14 space-y-16 md:space-y-20">
           {projects.map((p, i) => (
             <article
               key={p.name}
